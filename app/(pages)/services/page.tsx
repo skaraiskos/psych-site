@@ -1,9 +1,7 @@
 import { Metadata } from 'next';
 
 import HeaderInner from '~/components/widgets/HeaderInner';
-import dynamic from "next/dynamic";
-
-const Features2 = dynamic(() => import("~/components/widgets/Features2"), { ssr: false });
+import Features2 from '~/components/widgets/Features2';
 
 export const metadata: Metadata = {
   title: 'Υπηρεσίες',

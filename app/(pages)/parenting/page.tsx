@@ -1,9 +1,7 @@
 import { Metadata } from 'next';
 
 import HeaderInner from '~/components/widgets/HeaderInner';
-import dynamic from "next/dynamic";
-
-const Parenting = dynamic(() => import("~/components/widgets/Parenting"), { ssr: false });
+import Parenting from '~/components/widgets/Parenting';
 
 export const metadata: Metadata = {
   title: 'Συμβουλευτική Γονέων',

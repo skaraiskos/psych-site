@@ -1,9 +1,7 @@
 import { Metadata } from 'next';
 
 import HeaderInner from '~/components/widgets/HeaderInner';
-import dynamic from "next/dynamic";
-
-const OnlineTherapy = dynamic(() => import("~/components/widgets/OnlineTherapy"), { ssr: false });
+import OnlineTherapy from '~/components/widgets/OnlineTherapy';
 
 export const metadata: Metadata = {
   title: 'Online Θεραπείες',
