@@ -3,7 +3,13 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
-export default function Template({ children }) {
+type Props = {
+  searchParams?: {
+    page?: string;
+  };
+};
+
+export default function Template({ children }: Props) {
   const pathname = usePathname();
 
   return (
