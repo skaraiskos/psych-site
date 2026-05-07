@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center border border-gray-400 bg-white text-center text-base font-medium leading-snug shadow-md hover:shadow-none transition duration-200 ease-in focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-200 py-3 px-6 md:px-8;
+  }
+
+  .btn-ghost {
+    @apply border-none bg-transparent text-gray-700 dark:text-gray-400 dark:hover:text-white hover:text-gray-900 shadow-none;
+  }
+
+  .btn-primary {
+    @apply border-theme1 hover:border-theme1 bg-theme1  hover:bg-theme1 font-semibold text-white dark:text-white hover:text-white;
+  }
+
+  .btn-primary2 {
+    @apply mt-2 px-6 py-2.5 bg-theme7 text-white rounded-3xl transition-transform duration-300 hover:scale-105 hover:bg-theme7;
+  }
+
+  .card {
+    @apply rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow px-6 py-8 w-full;
+  }
+
+  .card2 {
+    @apply rounded-3xl backdrop-blur bg-theme5 shadow px-6 py-8 w-full;
+  }
+
+  .ribbon {
+    @apply absolute top-[19px] right-[-21px] block w-full rotate-45 bg-green-700 text-center text-[10px] font-bold uppercase leading-5 text-white shadow-[0_3px_10px_-5px_rgba(0,0,0,0.3)] before:absolute before:left-0 before:top-full before:z-[-1] before:border-[3px] before:border-r-transparent before:border-b-transparent before:border-l-green-800 before:border-t-green-800 before:content-[''] after:absolute after:right-0 after:top-full after:z-[-1] after:border-[3px] after:border-l-transparent after:border-b-transparent after:border-r-green-800 after:border-t-green-800 after:content-[''];
+  }
+
+  .theme-pantone {
+    --color-almond: 246 231 229; /* Almond Peach (header)*/
+    --color-snowbound: 255 255 255; /* Snowbound */
+    --color-blazing: 240 169 95; /* Blazing Orange */
+    --color-apricot-old: 191 134 138; /* Brandied Apricot (call to action)*/
+    --color-apricot: 177 135 135; /* Brandied Apricot (call to action)*/
+    --color-marsala: 140 82 78; /* Marsala (deep brown)*/
+    --color-grey: 226 222 220 /* Almost Grey */
+  }
+
+  .theme-mint {
+    --color-almond: 237 255 240; /* Light Green */
+    --color-blazing: 170 229 177; /* Deeper Green */
+    --color-apricot: 161 212 197; /* Even Deeper Green */
+    --color-marsala: 103 192 144; /* Marsala */
+    --color-snowbound: 255 255 255; /* Snowbound */
+    --color-grey: 250 247 240; /* Beige */
+  }
+
+  .theme-light {
+    --color-almond: 237 255 240; /* header */
+    --color-blazing: 170 229 177; /* Deeper Green */
+    --color-apricot: 133 168 146; /* cta */
+    --color-marsala: 198 160 140; /* Marsala */
+    --color-snowbound: 255 255 255; /* Snowbound */
+    --color-grey: 244 237 223; /* Beige */
+    --color-deeper1: 102 140 116;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  @media (max-width: 768px) {
+    .parallax {
+      background-attachment: scroll;
+    }
+  }
+}
+
+
