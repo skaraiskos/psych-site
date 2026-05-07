@@ -1,6 +1,7 @@
 import HeaderInner from "~/components/widgets/HeaderInner";
+import type { ReactNode } from "react";
 
-export default function BlogLayout({ children }) {
+export default function BlogLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <HeaderInner page="blog" />
