@@ -9,7 +9,13 @@ export const metadata: Metadata = {
   title: "Άρθρα",
 };
 
-export default async function BlogPage({ searchParams }) {
+type Props = {
+  searchParams?: {
+    page?: string;
+  };
+};
+
+export default async function BlogPage({ searchParams }: Props ) {
   const page = parseInt(searchParams?.page || "1", 10);
   const pageSize = 6;
 

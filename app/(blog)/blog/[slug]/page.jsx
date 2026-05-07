@@ -15,6 +15,7 @@ const getFormattedDate = (date) =>
   });
 
 export async function generateMetadata({ params}) {
+  if (!params?.slug) return {};
   const post = await findPostBySlug(params.slug);
   if (!post) {
     return notFound();
@@ -40,6 +41,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }) {
+  if (!params?.slug) return notFound();
   const post = await findPostBySlug(params.slug);
 
   if (!post) {
