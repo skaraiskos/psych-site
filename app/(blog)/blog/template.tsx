@@ -2,11 +2,10 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { ReactNode } from "react";
 
 type Props = {
-  searchParams?: {
-    page?: string;
-  };
+  children: ReactNode;
 };
 
 export default function Template({ children }: Props) {
