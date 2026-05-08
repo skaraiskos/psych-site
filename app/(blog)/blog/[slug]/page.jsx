@@ -15,11 +15,18 @@ const getFormattedDate = (date) =>
   });
 
 export async function generateMetadata({ params}) {
-  if (!params?.slug) return {};
-  const post = await findPostBySlug(params.slug);
+  const { slug } = await params;
+
+  if (!slug) {
+    return notFound();
+  }
+
+  const post = await findPostBySlug(slug);
+
   if (!post) {
     return notFound();
   }
+  
   return {
     title: post.title,
     description: post.description,
@@ -35,14 +42,21 @@ export async function generateStaticParams() {
     pageSize: 6,
   });
 
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  return (posts ?? [])
+    .filter(Boolean)
+    .map((post) => ({
+      slug: post.slug,
+    }));
 }
 
 export default async function Page({ params }) {
-  if (!params?.slug) return notFound();
-  const post = await findPostBySlug(params.slug);
+  const { slug } = await params;
+
+  if (!slug) {
+    return notFound();
+  }
+
+  const post = await findPostBySlug(slug);
 
   if (!post) {
     return notFound();

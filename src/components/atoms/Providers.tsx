@@ -2,19 +2,16 @@
 
 import { ThemeProvider } from 'next-themes';
 
-export interface ProvidersProps {
-  children: React.ReactNode
+export default function Providers({ children }: { children: React.ReactNode }) {
+  return (
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="light"
+      forcedTheme="light"
+      enableSystem={false}
+      disableTransitionOnChange
+    >
+      {children}
+    </ThemeProvider>
+  );
 }
-
-const Providers = ({ children }: ProvidersProps) => (
-  <ThemeProvider
-    attribute="class"
-    defaultTheme="light"
-    forcedTheme="light"
-    disableTransitionOnChange
-  >
-    {children}
-  </ThemeProvider>
-);
-
-export default Providers;
