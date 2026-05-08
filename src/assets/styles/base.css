@@ -8,11 +8,11 @@
   }
 
   .btn-ghost {
-    @apply border-none bg-transparent text-gray-700 dark:text-gray-400 dark:hover:text-white hover:text-gray-900 shadow-none;
+    @apply border-none bg-transparent text-gray-700 hover:text-gray-900 shadow-none;
   }
 
   .btn-primary {
-    @apply border-theme1 hover:border-theme1 bg-theme1  hover:bg-theme1 font-semibold text-white dark:text-white hover:text-white;
+    @apply border-theme1 hover:border-theme1 bg-theme1  hover:bg-theme1 font-semibold text-white hover:text-white;
   }
 
   .btn-primary2 {
@@ -20,7 +20,7 @@
   }
 
   .card {
-    @apply rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow px-6 py-8 w-full;
+    @apply rounded-lg backdrop-blur border border-gray-200 bg-white shadow px-6 py-8 w-full;
   }
 
   .card2 {

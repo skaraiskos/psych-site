@@ -62,7 +62,7 @@ export default async function Page({ params }) {
           {post.image ? (
             <Image
               src={post.image}
-              className="mx-auto mt-4 mb-6 max-w-full bg-gray-400 dark:bg-slate-700 sm:rounded-md lg:max-w-6xl"
+              className="mx-auto mt-4 mb-6 max-w-full bg-gray-400 sm:rounded-md lg:max-w-6xl"
               sizes="(max-width: 900px) 400px, 900px"
               alt={post.description}
               loading="eager"
@@ -72,7 +72,7 @@ export default async function Page({ params }) {
             />
           ) : (
             <div className="mx-auto max-w-3xl px-4 sm:px-6">
-              <div className="border-t dark:border-slate-700" />
+              <div className="border-t" />
             </div>
           )}
         </header>
