@@ -1,23 +1,5 @@
 import {
-  IconArrowDown,
-  IconArrowsRightLeft,
-  IconUser,
-  IconUsers,
-  IconScreenShare,
-  IconBulb,
-  IconCheck,
-  IconClock,
-  IconDownload,
-  IconColorFilter,
-  IconMail,
-  IconMapPin,
-  IconPhoneCall,
-} from '@tabler/icons-react';
-import {
-  CallToActionProps,
-  ContactProps,
-  FAQsProps,
-  FeaturesProps,
+  PurposeProps,
   HeroProps,
 } from '../../types';
 import heroImg from '~/assets/images/hero3.jpg';

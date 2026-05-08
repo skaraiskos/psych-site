@@ -70,20 +70,6 @@ type Textarea = {
   placeholder?: string;
 };
 
-type Checkbox = {
-  label: string;
-  value: string;
-};
-
-type Radio = {
-  label: string;
-};
-
-type RadioBtn = {
-  label?: string;
-  radios: Array<Radio>;
-};
-
 type SmallForm = {
   icon?: Icon;
   input: Input;
@@ -93,10 +79,8 @@ type SmallForm = {
 type FormProps = {
   title?: string;
   description?: string;
-  inputs: Array<Input>;
-  radioBtns?: RadioBtn;
+  inputs: readonly Input[];
   textarea?: Textarea;
-  checkboxes?: Array<Checkbox>;
   btn: Button;
   btnPosition?: 'center' | 'right' | 'left';
   containerClass?: string;

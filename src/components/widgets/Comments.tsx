@@ -5,6 +5,16 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import CommentFormWrapper from '../common/CommentFormWrapper';
 
+/* ---------------- TYPES ---------------- */
+
+type Direction = number;
+
+type VariantProps = {
+  direction: Direction;
+};
+
+/* ---------------- DATA ---------------- */
+
 const commentsData = [
   {
     text: "Αυτή είναι μια πολύ όμορφη εμπειρία που αξίζει να μοιραστεί κανείς. Με βοήθησε πραγματικά να δω τα πράγματα διαφορετικά. Εξαιρετική προσέγγιση και πολύ ανθρώπινη.",
@@ -45,10 +55,10 @@ const formData = {
     title: 'Υποβολή',
     type: 'submit',
   },
-};
+} as const;
 
 const variants = {
-  enter: (direction) => ({
+  enter: (direction: Direction) => ({
     x: direction > 0 ? "100%" : "-100%",
     opacity: 0,
   }),
@@ -56,33 +66,28 @@ const variants = {
     x: 0,
     opacity: 1,
   },
-  exit: (direction) => ({
+  exit: (direction: Direction) => ({
     x: direction > 0 ? "-100%" : "100%",
     opacity: 0,
   }),
 };
 
-const swipeConfidenceThreshold = 50;
-const swipePower = (offset, velocity) => {
+const swipeConfidenceThreshold: number = 50;
+const swipePower = (offset: number, velocity: number): number => {
   return Math.abs(offset) * velocity;
 };
 
 const Comments = () => {
-  const [[index, direction], setIndex] = useState([0, 0]);
+  const [[index, direction], setIndex] = useState<[number, number]>([0, 0]);
 
-  const paginate = (newDirection) => {
-    setIndex(([prev]) => {
-      const next = (prev + newDirection + commentsData.length) % commentsData.length;
+  const paginate = (newDirection: number) => {
+    setIndex(([prevIndex]) => {
+      const next =
+        (prevIndex + newDirection + commentsData.length) %
+        commentsData.length;
+
       return [next, newDirection];
     });
-  };
-
-  const prev = () => {
-    setIndex((i) => (i === 0 ? commentsData.length - 1 : i - 1));
-  };
-
-  const next = () => {
-    setIndex((i) => (i + 1) % commentsData.length);
   };
 
   return (

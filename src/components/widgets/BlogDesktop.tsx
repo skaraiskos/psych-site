@@ -1,7 +1,8 @@
 "use client";
 
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
+import type { ComponentType } from "react";
 
 import {
   IconBrandFacebook,
@@ -11,17 +12,51 @@ import {
   IconMapPinFilled,
 } from "@tabler/icons-react";
 
+/* ---------------- TYPES ---------------- */
+
+type IconType = ComponentType<{ className?: string }>;
+
+type SocialItem = {
+  label: string;
+  icon: IconType;
+  href: string;
+};
+
+type LinkItem = {
+  label: string;
+  icon: IconType;
+  text: string;
+};
+
+type Post = {
+  slug: string;
+  title: string;
+  image: StaticImageData | string;
+  publishDate?: string;
+  excerpt?: string;
+};
+
+type Props = {
+  posts: Post[];
+  currentPage: number;
+  totalPages: number;
+};
+
+/* ---------------- DATA ---------------- */
+
 const content = {
   socials: [
     { label: "Instagram", icon: IconBrandInstagram, href: "#" },
     { label: "Facebook", icon: IconBrandFacebook, href: "#" },
-  ],
+  ] as SocialItem[],
   links1: [
     { label: "Διεύθυνση", icon: IconMapPinFilled, text: "Γλυκά Νερά, Αθήνα" },
     { label: "Email", icon: IconMailFilled, text: "mavrogonatoupsych@gmail.com" },
     { label: "Τηλέφωνο", icon: IconPhoneFilled, text: "6971737100" },
-  ],
+  ] as LinkItem[],
 };
+
+/* ---------------- HELPERS ---------------- */
 
 const formatShortDate = (date: string) => {
   const d = new Date(date);
@@ -31,7 +66,9 @@ const formatShortDate = (date: string) => {
   };
 };
 
-export default function BlogDesktop({ posts, currentPage, totalPages }) {
+/* ---------------- COMPONENT ---------------- */
+
+export default function BlogDesktop({ posts, currentPage, totalPages }: Props) {
   return (
     <section className="mx-auto max-w-7xl px-6 py-12 lg:py-20">
       <div className="grid grid-cols-[2.2fr_1fr] gap-10">

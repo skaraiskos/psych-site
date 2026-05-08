@@ -67,11 +67,13 @@ const Purpose = ({ id, header }: PurposeProps) => {
 
       {/* HEADER */}
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <Headline
-          header={header}
-          titleClass="text-2xl md:text-3xl mb-10 text-white"
-          subtitleClass="text-base text-white"
-        />
+        {header && (
+          <Headline
+            header={header}
+            titleClass="text-2xl md:text-3xl mb-10 text-white"
+            subtitleClass="text-base text-white"
+          />
+        )}
       </div>
 
       {/* ================= CIRCLES ================= */}

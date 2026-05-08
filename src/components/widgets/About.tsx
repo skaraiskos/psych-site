@@ -219,7 +219,7 @@ const AboutPage = () => {
         md:grid-cols-2
         lg:grid-cols-4
       ">
-        {pillars.map(({ title, description, icon: Icon, callToAction }, index) => {
+        {pillars.map(({ title, description, icon: Icon }, index) => {
           const isLastSingle = pillars.length === 4 && index === 3;
 
           return (

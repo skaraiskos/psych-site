@@ -3,7 +3,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const formatShortDate = (date) => {
+const formatShortDate = (date: string) => {
   const d = new Date(date);
   return {
     day: d.getDate(),
@@ -12,9 +12,9 @@ const formatShortDate = (date) => {
 };
 
 const Articles = ({ posts = [] }) => {
-  const scrollRef = useRef(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const scroll = (dir) => {
+  const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
     const width = scrollRef.current.offsetWidth;
 

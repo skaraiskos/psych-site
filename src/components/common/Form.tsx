@@ -9,9 +9,7 @@ const Form = ({
   title,
   description,
   inputs,
-  radioBtns,
   textarea,
-  checkboxes,
   btn,
   btnPosition,
   containerClass,
@@ -23,8 +21,14 @@ const Form = ({
   descriptionClass,
   onSubmit,
 }: FormProps) => {
-  const [inputValues, setInputValues] = useState({});
-  const [textareaValues, setTextareaValues] = useState('');
+  const [inputValues, setInputValues] = useState<{
+    name?: string;
+    mail?: string;
+  }>({
+    name: "",
+    mail: "",
+  });
+  const [textareaValues, setTextareaValues] = useState<string>("");
 
   // Update the value of the entry fields
   const changeInputValueHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,7 +48,7 @@ const Form = ({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     if (loading) return;
     e.preventDefault();
 
@@ -135,7 +139,7 @@ const Form = ({
                   id={name}
                   name={name}
                   autoComplete={autocomplete}
-                  value={inputValues[name] || ""}
+                  value={inputValues[name as "name" | "mail"] || ""}
                   onChange={(e) => {
                     setError("");
                     toast.dismiss();
