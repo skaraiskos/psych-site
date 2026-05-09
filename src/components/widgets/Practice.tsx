@@ -43,7 +43,7 @@ const renderText = (text: string) => {
 
 const Practice = () => {
   return (
-      <section className="relative w-full min-h-screen bg-theme2">
+      <section className="relative w-full min-h-screen bg-theme2 text-justify">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-4 items-center py-8 z-1 pointer-events-none">
           {data.image && (
           <motion.div
@@ -51,18 +51,18 @@ const Practice = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="relative w-full md:w-[86%] h-[300px] md:h-[630px] md:left-[10%]"
+              className="relative w-full w-[85%] mx-auto md:mx-1 md:w-[72%] h-[300px] md:h-[430px] md:left-[15%]"
           >
             <Image
               src={data.image}
               alt={data.title}
               fill
               loading="lazy"
-              className="object-cover shadow-md filter grayscale"
+              className="object-cover shadow-md filter rounded-3xl opacity-90"
             />
           </motion.div>
           )}
-          <div className="relative h-full w-[90%] justify-start">
+          <div className="relative h-full w-[90%] md:w-[95%] md:justify-start mx-auto md:mx-0">
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
@@ -80,28 +80,27 @@ const Practice = () => {
                   whileInView="visible"
                   viewport={{ once: true }}
                   transition={{ staggerChildren: 0.2, duration: 0.6 }}
-                  className="block relative h-full md:w-[90%] md:h-[400px] pl-10"
+                  className="block relative w-[90%] mx-auto md:mx-0"
               >
-                  {/*<h1 className="text-3xl md:text-3xl font-light mb-8 text-left">{data.title}</h1>*/}
-                  <p className="text-lg leading-relaxed mb-4">
+                  <div className="text-base leading-relaxed mb-4">
                       {data.description1.split("split").map((line, i) => (
                         <p key={i} className="mb-4">
                           {line}
                         </p>
                       ))}
-                  </p>
+                  </div>
               </motion.div>
           </div>
         </div>
 
-        <div className="mx-10 my-8 md:max-w-7xl md:mx-auto">
-          <p className="text-lg leading-relaxed mb-4">
+        <div className="mb-12 md:max-w-7xl mx-auto w-[81%] md:w-[90%]">
+          <div className="text-base leading-relaxed mb-4">
             {data.description2.split("split").map((line, i) => (
               <p key={i} className="mb-4">
                  {renderText(line)}
               </p>
             ))}
-          </p>
+          </div>
         </div>
       </section>
     )

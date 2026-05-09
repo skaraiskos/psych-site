@@ -64,7 +64,7 @@ const Contact = () => (
         <div className="h-full pr-6 md:pr-12 flex flex-col justify-center items-center">
           <ul className="mb-6 md:mb-0">
             {contactData.items?.map(({ description, icon: Icon }, index) => (
-              <li key={`item-contact-${index}`} className="flex items-center mb-6 py-3">
+              <li key={`item-contact-${index}`} className="flex items-center mb-4 py-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded bg-theme4 text-gray-50">
                   {Icon && <Icon className="h-6 w-6" />}
                 </div>

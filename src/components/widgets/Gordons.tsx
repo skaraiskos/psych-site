@@ -3,13 +3,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from 'next/image';
 
-import therapyImg0 from '~/assets/images/effectiveParenting0.png';
+import therapyImg0 from '~/assets/images/effectiveParenting0.webp';
 import therapyImg from '~/assets/images/effectiveParenting.jpg';
 import therapyImg1 from '~/assets/images/effectiveParenting1.jpg';
 import therapyImg2 from '~/assets/images/effectiveParenting2.jpg';
-import therapyImg3 from '~/assets/images/effectiveParenting3.jpg';
 import therapyImg4 from '~/assets/images/effectiveParenting4.jpg';
 import therapyImg5 from '~/assets/images/effectiveParenting5.jpg';
+import therapyImg8 from '~/assets/images/effectiveParenting8.jpg';
+import therapyImg9 from '~/assets/images/effectiveParenting9.jpg';
 
 const data = {
     title: 'Τι είναι το Εργαστήριο Αποτελεσματικού Γονέα;',
@@ -18,9 +19,10 @@ const data = {
       {src:therapyImg, duration: 3000},
       {src:therapyImg1, duration: 2000},
       {src:therapyImg2, duration: 2000},
-      //{src:therapyImg3, duration: 2000},
-      //{src:therapyImg4, duration: 2000},
-      {src:therapyImg5, duration: 2000}
+      {src:therapyImg4, duration: 2000},
+      {src:therapyImg5, duration: 2000},
+      {src:therapyImg8, duration: 2000},
+      {src:therapyImg9, duration: 2000}
     ],
     descriptionTop: 'Το ΕΑΓ είναι ένα βιωματικό, ψυχοεκπαιδευτικό εργαστήριο για γονείς και φροντιστές παιδιών ανεξαρτήτου ηλικίας, το οποίο βασίζεται στη φιλοσοφία του Dr. Thomas Gordon και αντλεί τις ρίζες του από την Προσωποκεντρική Προσέγγιση του Carl Rogers. Στην καρδιά του βρίσκονται τρεις αξίες:  **Ενσυναίσθηση – Αποδοχή – Αυθεντικότητα**.split\
                     Σύμφωνα με τη φιλοσοφία του Dr. Thomas Gordon, τα παιδιά δεν συμπεριφέρονται απείθαρχα με στόχο να προκαλέσουν ή να δυσκολέψουν τους ενήλικες. Η συμπεριφορά τους είναι τρόπος έκφρασης των αναγκών τους.split\
@@ -71,10 +73,10 @@ const Gordons = () => {
   }, [slideIndex, data.images]);
 
 return (
-  <section className="relative w-full bg-theme2">
+  <section className="relative w-full min-h-screen bg-theme2 text-justify">
 
     {/* ================= TOP SECTION ================= */}
-    <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-4 items-center pt-8 pb-4 z-1">
+    <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-4 items-center pt-8 md:pb-4 z-1">
 
       {data.imageFirst && (
         <motion.div
@@ -82,18 +84,18 @@ return (
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative w-full md:w-[86%] h-[300px] md:h-[630px] md:left-[10%] overflow-hidden"
+          className="relative w-[85%] mx-auto md:mx-1 md:w-[72%] h-[300px] md:h-[430px] md:left-[15%]"
         >
           <Image
             src={data.imageFirst[0].src}
             alt={data.title}
             fill
-            className="object-cover shadow-md"
+            className="object-cover shadow-md rounded-3xl"
           />
         </motion.div>
       )}
 
-      <div className="relative h-full w-[90%] justify-start">
+      <div className="relative h-full w-[90%] md:w-[95%] md:justify-start mx-auto md:mx-0">
         <motion.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
@@ -112,43 +114,43 @@ return (
           whileInView="visible"
           viewport={{ once: true }}
           transition={{ staggerChildren: 0.2, duration: 0.6 }}
-          className="block relative h-full md:w-[90%] md:h-[400px] pl-10"
+          className="block relative mx-auto w-[90%] md:mx-0 md:w-[90%] md:pl-0"
         >
-          <h1 className="text-3xl md:text-3xl font-light mb-8 text-left">
+          <h1 className="text-3xl md:text-3xl font-light mb-8 text-left mt-6 md:mt-0">
             {data.title}
           </h1>
 
-          <p className="text-lg leading-relaxed mb-4">
+          <div className="leading-relaxed mb-4">
             {data.descriptionTop.split("split").map((line, i) => (
-              <p key={i} className="mb-4">
+              <p key={i} className="mb-4 text-base">
                 {renderText(line)}
               </p>
             ))}
-          </p>
+          </div>
         </motion.div>
       </div>
     </div>
 
     {/* ================= UPPER MIDDLE SECTION ================= */}
-    <div className="mx-10 mb-8 md:mt-8 md:max-w-7xl md:mx-auto">
-      <p className="text-lg leading-relaxed mb-4">
+    <div className="md:mt-2 md:max-w-7xl mx-auto w-[81%] md:w-[90%]">
+      <div className="leading-relaxed mb-4">
         {data.descriptionUpMid.split("split").map((line, i) => (
-          <p key={i} className="mb-4">
+          <p key={i} className="mb-4 text-base">
             {renderText(line)}
           </p>
         ))}
-      </p>
+      </div>
     </div>
 
     {/* ================= BOTTOM MIDDLE SECTION ================= */}
-    <div className="mx-10 mt-8 md:max-w-7xl md:mx-auto">
-      <p className="text-lg leading-relaxed mb-4">
+    <div className="md:mt-2 md:max-w-7xl mx-auto w-[81%] md:w-[90%]">
+      <div className="leading-relaxed mb-4">
         {data.descriptionBotMid.split("split").map((line, i) => (
-          <p key={i} className="mb-4">
+          <p key={i} className="mb-4 text-base">
             {renderText(line)}
           </p>
         ))}
-      </p>
+      </div>
     </div>
 
 
@@ -156,7 +158,7 @@ return (
     <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-4 items-center py-8 z-1 md:max-w-7xl md:mx-auto">
 
       {/* Left text only */}
-      <div className="relative h-full w-[90%] justify-start order-2 md:order-1 md:mb-10 ">
+      <div className="relative h-full w-[85%] md:w-full justify-start order-2 md:order-1 md:mb-10 mx-auto">
         <motion.div
           variants={{
             hidden: { opacity: 0, y: 30 },
@@ -166,15 +168,15 @@ return (
           whileInView="visible"
           viewport={{ once: true }}
           transition={{ staggerChildren: 0.2, duration: 0.6 }}
-          className="block relative h-full md:w-[90%] md:h-[400px] pl-10 md:pl-0"
+          className="block relative h-full md:w-[90%] md:h-[400px] pl-0"
         >
-          <p className="text-lg leading-relaxed mb-4">
+          <div className="leading-relaxed mb-4 text-justify">
             {data.descriptionBot.split("split").map((line, i) => (
-            <p key={i} className="mb-4">
-              {renderText(line)}
-            </p>
-          ))}
-          </p>
+              <p key={i} className="mb-4 text-base">
+                {renderText(line)}
+              </p>
+            ))}
+          </div>
 
           {/* Button */}
           {data.callToAction?.text && data.callToAction?.href && (
@@ -208,7 +210,7 @@ return (
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative w-full md:w-[80%] h-[300px] md:h-[530px] overflow-hidden order-1 md:order-2"
+          className="relative w-[90%] md:w-[72%] h-[300px] md:h-[430px] mx-auto overflow-hidden order-1 md:order-2"
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -223,7 +225,7 @@ return (
                 src={data.images[slideIndex].src}
                 alt={data.title}
                 fill
-                className="object-cover shadow-md"
+                className="object-cover shadow-md rounded-3xl"
               />
             </motion.div>
           </AnimatePresence>
@@ -274,13 +276,13 @@ return (
         {/* TEXT */}
         <div className="text-center px-6 md:px-12">
           {data.quote.split("split").map((line, i) => (
-            <p key={i} className="mt-3 mb-3 italic text-lg md:text-base text-theme7 leading-relaxed">
+            <p key={i} className="mt-3 mb-3 italic text-base md:text-base text-theme7 leading-relaxed">
               {renderText(line)}
             </p>
           ))}
         </div>
         <div className="text-right px-6 md:px-12">
-          <p className="mt-3 mb-3 italic text-lg md:text-base text-theme7 leading-relaxed">
+          <p className="mt-3 mb-3 italic text-base md:text-base text-theme7 leading-relaxed">
             Σταυρούλα Μαυρογόνατου
           </p>
         </div>

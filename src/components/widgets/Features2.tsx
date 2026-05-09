@@ -2,10 +2,10 @@
 import { motion } from "framer-motion";
 import Image from 'next/image';
 
-import therapyImg from '~/assets/images/therapy.png';
+import therapyImg from '~/assets/images/therapy.webp';
 import onlineImg from '~/assets/images/therapyOnline.jpg';
-import gordons from '~/assets/images/effectiveParenting0.png';
-import parenting from '~/assets/images/parenting.png';
+import gordons from '~/assets/images/effectiveParenting0.webp';
+import parenting from '~/assets/images/parenting.webp';
 
 const services = [
   {

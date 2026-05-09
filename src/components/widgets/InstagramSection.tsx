@@ -64,7 +64,7 @@ const InstagramSection = () => {
         priority
       />
 
-      <div className="max-w-4xl mx-auto text-center text-black">
+      <div className="max-w-7xl mx-auto text-center text-black">
 
         {/* header */}
         <motion.h2
@@ -100,38 +100,58 @@ const InstagramSection = () => {
         </motion.div>
 
         {/* text block */}
-        <p className="mt-8 text-base md:max-w-5xl mx-auto pointer-events-none">
-          Το ΨυχΑγωγούμε είναι ένας χώρος αφιερωμένος στην οικογένεια.
-          Δημιουργήθηκε για να προσφέρει συμβουλές και ερεθίσματα για σκέψη γύρω από τη γονεϊκότητα, ενισχύοντας τον προβληματισμό και εμπνέοντας τους γονείς να αναζητήσουν περαιτέρω γνώση και στήριξη, όταν το χρειάζονται.
-        </p>
+        <div className="mt-8 md:mt-12 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 pointer-events-none">
 
-        {/* text block */}
-        <p className="mt-8 text-base md:max-w-5xl mx-auto pointer-events-none">
-          Παράλληλα, μέσα από το ΨυχΑγωγούμε ανακοινώνονται εργαστήρια και σεμινάρια για γονείς, ενώ μοιράζομαι σκέψεις και εμπειρίες απο την καθημερινότητα μου ως ψυχολόγος.
-        </p>
+          {/* LEFT COLUMN */}
+          <div className="space-y-8 text-sm leading-relaxed text-justify">
 
-        <div className="mt-12 max-w-sm md:max-w-5xl mx-auto pointer-events-none">
+            <p>
+              Το ΨυχΑγωγούμε είναι ένας χώρος αφιερωμένος στην οικογένεια.
+              Δημιουργήθηκε για να προσφέρει συμβουλές και ερεθίσματα για σκέψη γύρω από τη γονεϊκότητα, ενισχύοντας τον προβληματισμό και εμπνέοντας τους γονείς να αναζητήσουν περαιτέρω γνώση και στήριξη, όταν το χρειάζονται.
+            </p>
 
-          {/* title */}
-          <h3 className="text-xl md:text-2xl font-semibold text-black mb-6">
-            Τι σημαίνει ΨυχΑγωγούμε;
-          </h3>
+            <p>
+              Παράλληλα, μέσα από το ΨυχΑγωγούμε ανακοινώνονται εργαστήρια και σεμινάρια για γονείς, ενώ μοιράζομαι σκέψεις και εμπειρίες απο την καθημερινότητα μου ως ψυχολόγος.
+            </p>
 
-          {/* list */}
-          <ul className="space-y-4 text-base text-left text-black/80 leading-relaxed">
+          </div>
 
-            <li className="flex gap-4">
-              <span className="font-semibold text-black">Ψυχή</span>
-              κάθε άνθρωπος κουβαλά έναν εσωτερικό κόσμο γεμάτο σκέψεις, συναισθήματα και εμπειρίες που αξίζουν φροντίδα.
-            </li>
+          {/* RIGHT COLUMN */}
+          <div>
 
-            <li className="flex gap-4">
-              <span className="font-semibold text-black">Αγωγή</span>
-              η ανατροφή των παιδιών ξεκινά πρώτα από τη δική μας προσωπική ανάπτυξη και αυτογνωσία.
-            </li>
+            {/* title */}
+            <h3 className="text-xl md:text-2xl font-semibold text-black mb-6 md:text-left">
+              Τι σημαίνει ΨυχΑγωγούμε;
+            </h3>
 
-          </ul>
+            {/* list */}
+            <ul className="space-y-6 text-sm text-left text-black/80 leading-relaxed">
 
+              <li className="flex gap-4">
+                <span className="font-semibold text-black min-w-[70px]">
+                  Ψυχή
+                </span>
+
+                <span>
+                  κάθε άνθρωπος κουβαλά έναν εσωτερικό κόσμο γεμάτο σκέψεις,
+                  συναισθήματα και εμπειρίες που αξίζουν φροντίδα.
+                </span>
+              </li>
+
+              <li className="flex gap-4">
+                <span className="font-semibold text-black min-w-[70px]">
+                  Αγωγή
+                </span>
+
+                <span>
+                  η ανατροφή των παιδιών ξεκινά πρώτα από τη δική μας προσωπική
+                  ανάπτυξη και αυτογνωσία.
+                </span>
+              </li>
+
+            </ul>
+
+          </div>
         </div>
 
         {/* Instagram CTA */}

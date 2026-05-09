@@ -114,11 +114,14 @@ const Footer = () => {
 
             {/* Top text */}
             <div className="mb-10 max-w-2xl pointer-events-none">
+              <h3 className="text-lg font-semibold">
+                Μπορείτε να επικοινωνήσετε για πληροφορίες ή για να
+              </h3>
               <h3 className="text-lg font-semibold mb-3">
-                Μπορείτε να επικοινωνήσετε για πληροφορίες ή για να κλείσετε ραντεβού δια ζώσης ή διαδικτυακά.
+                κλείσετε ραντεβού δια ζώσης ή διαδικτυακά.
               </h3>
 
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-lg leading-relaxed">
                 Διαθέσιμα και πρωινά ραντεβού
               </p>
             </div>
@@ -159,6 +162,21 @@ const Footer = () => {
 
             </div>
           </motion.div>
+
+        </div>
+      </div>
+
+      {/* Black Bottom bar */}
+      <div className="w-full bg-black py-4">
+        <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-2 text-sm text-gray-400">
+          
+          <p>
+            © 2026 Σταυρούλα Μαυρογόνατου. All rights reserved.
+          </p>
+
+          <p>
+            Designed & Developed by Sotiris Karaiskos.
+          </p>
 
         </div>
       </div>

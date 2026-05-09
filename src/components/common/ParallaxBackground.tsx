@@ -66,7 +66,7 @@ const ParallaxBackground = ({
         style={{
           transform: `translateY(${offsetY}px)`,
           objectFit: 'cover',
-          filter: 'brightness(100%) opacity(70%)',
+          filter: 'brightness(100%) opacity(50%)',
         }}
       />
     </div>

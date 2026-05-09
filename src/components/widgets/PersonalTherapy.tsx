@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from 'next/image';
 import Link from "next/link";
 
-import therapyImg from '~/assets/images/therapy.png';
+import therapyImg from '~/assets/images/therapy.webp';
 
 const data = {
     title: 'Ατομική Ψυχοθεραπεία',
@@ -67,26 +67,26 @@ export function renderText(text: string) {
 
 const PersonalTherapy = () => {
   return (
-      <section className="relative w-full min-h-screen bg-theme2">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-4 items-stretch pt-8 z-1">
+      <section className="relative w-full min-h-screen bg-theme2 text-justify">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-4 items-center pt-8 z-1">
           {data.image && (
           <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="relative w-full md:w-[86%] h-[300px] md:h-[570px] md:left-[10%]"
+              className="relative w-full w-[85%] mx-auto md:mx-1 md:w-[72%] h-[300px] md:h-[430px] md:left-[15%]"
           >
             <Image
               src={data.image}
               alt={data.title}
               fill
               loading="lazy"
-              className="object-cover shadow-md filter"
+              className="object-cover shadow-md filter rounded-3xl"
             />
           </motion.div>
           )}
-          <div className="relative w-[90%] justify-start">
+          <div className="relative h-full w-[90%] md:w-[95%] md:justify-start mx-auto md:mx-0">
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
@@ -104,10 +104,10 @@ const PersonalTherapy = () => {
                   whileInView="visible"
                   transition={{ staggerChildren: 0.2, duration: 0.6 }}
                   viewport={{ once: true }}
-                  className="block relative md:w-[90%] pl-10"
+                  className="block relative w-[90%] mx-auto md:mx-0"
               >
                   {/*<h1 className="text-3xl md:text-3xl font-light mb-8 text-left">{data.title}</h1>*/}
-                  <div className="text-lg leading-relaxed mb-4">
+                  <div className="text-base leading-relaxed mb-4">
                       {data.description1.split("split").map((line, i) => (
                         <p key={i} className="mb-4">
                           {renderText(line)}
@@ -119,8 +119,8 @@ const PersonalTherapy = () => {
           </div>
         </div>
 
-        <div className="mx-10 md:mt-8 md:max-w-7xl md:mx-auto">
-          <div className="text-lg leading-relaxed mb-4">
+        <div className="md:mt-6 md:max-w-7xl mx-auto w-[81%] md:w-[90%]">
+          <div className="text-base leading-relaxed mb-4">
             {data.description2.split("split").map((line, i) => (
               <p key={i} className="mb-4">
                 {renderText(line)}

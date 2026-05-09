@@ -3,7 +3,8 @@ import {
   HeroProps,
 } from '../../types';
 import heroImg from '~/assets/images/hero3.jpg';
-import handsImg from '~/assets/images/stacia.png';
+/*import handsImg from '~/assets/images/stacia.png';*/
+import handsImg from '~/assets/images/firstPage.png';
 
 // Hero data on Home page *******************
 export const heroHome: HeroProps = {

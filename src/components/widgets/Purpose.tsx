@@ -66,14 +66,20 @@ const Purpose = ({ id, header }: PurposeProps) => {
       </div>
 
       {/* HEADER */}
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        {header && (
-          <Headline
-            header={header}
-            titleClass="text-2xl md:text-3xl mb-10 text-white"
-            subtitleClass="text-base text-white"
-          />
-        )}
+      <div className="max-w-6xl mx-auto px-6 text-center mb-4">
+        <div
+          className="pointer-events-none mb-6 mx-auto md:mb-12 text-center"
+        >
+          <h2 className="font-heading font-bold tracking-tight text-2xl md:text-3xl mb-10 text-white">
+            Υποστήριξη για Εσάς και την Οικογένειά σας
+          </h2>
+          <p className="pointer-events-none mx-auto mt-4 max-w-5xl text-base text-white text-center">
+              Στόχος μου στη θεραπευτική διαδικασία είναι να δημιουργείται ένας ασφαλής χώρος, όπου κάθε άνθρωπος μπορεί να κατανοήσει σε βάθος τον εαυτό του και τις δυσκολίες που βιώνει, να επεξεργαστεί όσα τον επιβαρύνουν και να αναπτύξει πιο λειτουργικούς τρόπους σκέψης και διαχείρισης ώστε  να χτίσει μια πιο ουσιαστική σχέση με τον εαυτό και τους άλλους.
+          </p>
+          <p className="pointer-events-none mx-auto mt-4 max-w-5xl text-base text-white text-center">
+              Το παρελθόν αποτελεί αναπόσπαστο κομμάτι της εμπειρίας μας και, όταν το επεξεργαζόμαστε κατάλληλα, μπορεί να αποτελέσει πηγή γνώσης, κατανόησης και πολύτιμων «μαθημάτων».
+          </p>
+        </div>
       </div>
 
       {/* ================= CIRCLES ================= */}
@@ -110,7 +116,7 @@ const Purpose = ({ id, header }: PurposeProps) => {
                     type: "spring",
                     stiffness: 260,
                     damping: 18,
-                    delay: i * 0.12, // 👈 stagger here
+                    delay: i * 0.12,
                   }}
                   className="w-28 h-28 rounded-full bg-theme6 flex flex-col items-center justify-center text-center shadow-lg shadow-[0_10px_30px_rgba(255,223,0,0.25)]"
                 >
