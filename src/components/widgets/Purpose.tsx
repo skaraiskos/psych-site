@@ -27,7 +27,7 @@ const getPolarPosition = (index: number, total: number, radius: number) => {
 
 const pillars = [
   { title: "Ενσυναίσθηση", icon: IconHeart, text:'Η προσέγγιση βασίζεται στην κατανόηση της εμπειρίας του ατόμου μέσα από τη δική του οπτική, με αναγνώριση του συναισθήματός του και χωρίς κριτική διάθεση.' },
-  { title: "Αποδοχή", icon: IconEye, text:'Κάθε άνθρωπος αντιμετωπίζεται με σεβασμό ως μοναδική προσωπικότητα, νιώθει αποδεκτός, ασφαλές και προστατευμένο.' },
+  { title: "Αποδοχή", icon: IconEye, text:'Κάθε άνθρωπος αντιμετωπίζεται με σεβασμό ως μοναδική προσωπικότητα, νιώθει αποδεκτός, ασφαλής και προστατευμένος.' },
   { title: "Εμπιστοσύνη", icon: IconShieldLock, text:'Επιτρέπει τη δημιουργία ενός ασφαλούς πλαισίου συνεργασίας και εξερεύνησης του εαυτού αλλά και των σχεσιακών μοτίβων του θεραπευόμενου.' },
   { title: "Αυθεντικότητα", icon: IconFingerprint, text:'Η θεραπευτική στάση στηρίζεται στην αυθεντικότητα και την ειλικρίνεια, καθώς η ουσιαστική υποστήριξη προϋποθέτει καθαρή και αληθινή επικοινωνία.' },
 ];
@@ -112,7 +112,7 @@ const Purpose = ({ id, header }: PurposeProps) => {
                     damping: 18,
                     delay: i * 0.12, // 👈 stagger here
                   }}
-                  className="w-28 h-28 rounded-full bg-yellow-300 flex flex-col items-center justify-center text-center shadow-lg shadow-[0_10px_30px_rgba(255,223,0,0.25)]"
+                  className="w-28 h-28 rounded-full bg-theme6 flex flex-col items-center justify-center text-center shadow-lg shadow-[0_10px_30px_rgba(255,223,0,0.25)]"
                 >
                   {Icon && (
                     <Icon className="w-6 h-6 mb-1 text-theme4" />

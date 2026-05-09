@@ -36,37 +36,7 @@ const Articles = ({ posts = [] }) => {
         >
           <path
             fill="currentColor"
-            d="M0,44 C340,-20 1280,80 1440,74 L1440,0 L0,0 Z"
-          />
-        </svg>
-      </div>
-
-      {/*bottom divider*/}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-        <svg
-          className="block w-full h-[40px] text-theme6 rotate-180"
-          viewBox="0 10 1440 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="currentColor"
-            d="M0,64 C240,180 980,-30 1440,64 L1440,0 L0,0 Z"
-          />
-        </svg>
-      </div>
-
-      {/*overlay wave*/}
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
-        <svg 
-          viewBox="0 30 1440 120"
-          className="w-full h-[30px] text-theme4 rotate-180"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,80 C260,0 620,120 980,85 C1160,70 1380,40 1440,50"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="3"
+            d="M0,44 C340,20 1280,80 1440,34 L1440,0 L0,0 Z"
           />
         </svg>
       </div>

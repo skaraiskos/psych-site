@@ -14,35 +14,35 @@ const InstagramSection = () => {
       {/*top divider*/}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
         <svg
-          className="block w-full h-[90px] text-theme4"
+          className="block w-full h-[90px] text-theme2"
           viewBox="0 30 1440 120"
           preserveAspectRatio="none"
         >
           <path
             fill="currentColor"
-            d="M0,64 C240,160 980,0 1440,64 L1440,0 L0,0 Z"
+            d="M0,44 C240,120 980,0 1440,64 L1440,0 L0,0 Z"
           />
         </svg>
       </div>
 
       {/*overlay wave*/}
-      <div className="absolute top-0 left-0 w-full opacity-90 overflow-hidden leading-none">
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
         <svg 
           viewBox="0 30 1440 120"
-          className="w-full h-[80px] text-white"
+          className="w-full h-[30px] text-theme4 rotate-180"
           preserveAspectRatio="none"
         >
           <path
             d="M0,80 C260,0 620,120 980,85 C1160,70 1380,40 1440,50"
             fill="none"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth="3"
           />
         </svg>
       </div>
 
       {/*bottom divider*/}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+      <div className="absolute bottom-[-1px] left-0 w-full leading-none">
         <svg
           className="block w-full h-[90px] text-theme6 rotate-180"
           viewBox="0 30 1440 120"

@@ -60,6 +60,50 @@ const Features = () => {
   return (
     <section id={featuresHome.id} className="relative w-full bg-theme6 py-12">
 
+      {/*top divider*/}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
+        <svg
+          className="block w-full h-[90px] text-theme4"
+          viewBox="0 30 1440 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="currentColor"
+            d="M0,64 C240,160 980,0 1440,64 L1440,0 L0,0 Z"
+          />
+        </svg>
+      </div>
+
+      {/*overlay wave*/}
+      <div className="absolute top-0 left-0 w-full opacity-90 overflow-hidden leading-none">
+        <svg 
+          viewBox="0 30 1440 120"
+          className="w-full h-[80px] text-white"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,80 C260,0 620,120 980,85 C1160,70 1380,40 1440,50"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
+
+      {/*bottom divider*/}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+        <svg
+          className="block w-full h-[40px] text-theme6 rotate-180"
+          viewBox="0 10 1440 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="currentColor"
+            d="M0,64 C240,180 980,-30 1440,64 L1440,0 L0,0 Z"
+          />
+        </svg>
+      </div>
+
       {/* Services Grid */}
       <div className="
         w-full max-w-7xl mx-auto px-4 mt-10

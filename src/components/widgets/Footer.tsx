@@ -59,7 +59,7 @@ const Footer = () => {
 
       {/* White section with grid */}
       <div className="relative bg-white pt-0 md:pt-2 pb-6 px-0 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-[90rem] mx-0 md:mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-10 max-w-[90rem] mx-0 md:mx-auto">
           
           {/* box */}
           <motion.div
@@ -109,25 +109,54 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-12 md:h-[300px] text-sm p-6 md:mt-16"
+            className="p-6 md:mt-6"
           >
-            {/* Column 1 */}
-            <div className="flex flex-col justify-start">
-              <h3 className="text-lg font-semibold pointer-events-none">{content.links1Title}</h3>
-              {content.links1.map((s, i) => (
-                <div key={i} className="flex items-center space-x-2 mt-6">
-                  {s.icon && <s.icon className="h-5 w-5 text-gray-500" />}
-                  <span className="text-gray-700">{s.text}</span>
-                </div>
-              ))}
+
+            {/* Top text */}
+            <div className="mb-10 max-w-2xl pointer-events-none">
+              <h3 className="text-lg font-semibold mb-3">
+                Μπορείτε να επικοινωνήσετε για πληροφορίες ή για να κλείσετε ραντεβού δια ζώσης ή διαδικτυακά.
+              </h3>
+
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Διαθέσιμα και πρωινά ραντεβού
+              </p>
             </div>
 
-            {/* Column 2 */}
-            <div className="flex flex-col justify-start">
-              <h3 className="text-lg font-semibold pointer-events-none">{content.links2Title}</h3>
-              {content.links2.map((s, i) => (
-                  <a key={i} href={s.href} className="hover:text-theme4 transition-colors mt-6">{s.label}</a>
-              ))}
+            {/* Columns */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:pl-10 md:h-[200px] text-sm">
+
+              {/* Column 1 */}
+              <div className="flex flex-col justify-start">
+                <h3 className="text-lg font-semibold pointer-events-none">
+                  {content.links1Title}
+                </h3>
+
+                {content.links1.map((s, i) => (
+                  <div key={i} className="flex items-center space-x-2 mt-6">
+                    {s.icon && <s.icon className="h-5 w-5 text-gray-500" />}
+                    <span className="text-gray-700">{s.text}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Column 2 */}
+              <div className="flex flex-col justify-start">
+                <h3 className="text-lg font-semibold pointer-events-none">
+                  {content.links2Title}
+                </h3>
+
+                {content.links2.map((s, i) => (
+                  <a
+                    key={i}
+                    href={s.href}
+                    className="hover:text-theme4 transition-colors mt-6"
+                  >
+                    {s.label}
+                  </a>
+                ))}
+              </div>
+
             </div>
           </motion.div>
 

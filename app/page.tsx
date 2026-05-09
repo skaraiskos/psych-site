@@ -32,9 +32,9 @@ export default async function Page() {
       <FirstPage />
       <Hero {...heroHome} />
       <Purpose {...purposeHome} />
-      <InstagramSection />
       <Features />
       <Articles posts={posts} />
+      <InstagramSection />
       <Comments />
       <Contact/>
     </>

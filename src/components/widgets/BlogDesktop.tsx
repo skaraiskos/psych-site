@@ -46,13 +46,13 @@ type Props = {
 
 const content = {
   socials: [
-    { label: "Instagram", icon: IconBrandInstagram, href: "#" },
+    { label: "Instagram", icon: IconBrandInstagram, href: "https://instagram.com/psych.agogoume" },
     { label: "Facebook", icon: IconBrandFacebook, href: "#" },
   ] as SocialItem[],
   links1: [
-    { label: "Διεύθυνση", icon: IconMapPinFilled, text: "Γλυκά Νερά, Αθήνα" },
+    { label: "Διεύθυνση", icon: IconMapPinFilled, text: "Αγίου Ιωάννου 63, Αγία Παρασκευή" },
     { label: "Email", icon: IconMailFilled, text: "mavrogonatoupsych@gmail.com" },
-    { label: "Τηλέφωνο", icon: IconPhoneFilled, text: "6971737100" },
+    { label: "Τηλέφωνο", icon: IconPhoneFilled, text: "6951780181" },
   ] as LinkItem[],
 };
 
