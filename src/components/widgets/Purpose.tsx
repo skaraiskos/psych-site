@@ -155,7 +155,7 @@ const Purpose = ({ id, header }: PurposeProps) => {
                   w-40 h-40
                   hover:w-64
                   rounded-full hover:rounded-3xl
-                  bg-yellow-300
+                  bg-theme6
                   flex flex-col justify-center items-center
                   overflow-hidden
                   shadow-lg shadow-[0_10px_30px_rgba(255,223,0,0.25)]
