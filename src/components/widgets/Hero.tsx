@@ -39,7 +39,7 @@ const Hero = ({
             Σταυρούλα Μαυρογόνατου
           </h1>
 
-          <h2 className="text-3xl font-semibold leading-tight mb-4 pointer-events-none">
+          <h2 className="text-lg font-semibold leading-tight mb-4 pointer-events-none">
             Ψυχολόγος
           </h2>
 
@@ -127,7 +127,7 @@ const Hero = ({
               Σταυρούλα Μαυρογόνατου
             </h1>
 
-            <h2 className="text-4xl font-semibold text-center lg:text-left leading-tight mb-8 pointer-events-none">
+            <h2 className="text-xl font-semibold text-center lg:text-left leading-tight mb-8 pointer-events-none">
               Ψυχολόγος
             </h2>
 

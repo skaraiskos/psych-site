@@ -5,6 +5,7 @@ import Parenting from '~/components/widgets/Parenting';
 
 export const metadata: Metadata = {
   title: 'Συμβουλευτική Γονέων',
+  description: "Καθοδήγηση και συναισθηματική υποστήριξη των γονέων"
 };
 
 const Page = () => {

@@ -8,5 +8,5 @@ const redis = new Redis({
 
 export const ratelimit = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(2, "1 m"),
+  limiter: Ratelimit.slidingWindow(3, "1 m"),
 });

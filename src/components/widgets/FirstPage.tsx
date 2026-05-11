@@ -54,7 +54,7 @@ const FirstPage = () => {
             </p>
 
             {/* Line 3 — Name */}
-            <p className="text-base font-bold italic md:text-xl text-black/90 mb-8 tracking-normal">
+            <p className="text-base font-bold italic md:text-base text-black/90 mb-8 tracking-normal">
               {firstPageHome.description1}
             </p>
 

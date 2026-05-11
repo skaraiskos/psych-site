@@ -5,6 +5,7 @@ import HeaderInner from '~/components/widgets/HeaderInner';
 
 export const metadata: Metadata = {
   title: 'Contact us',
+  description: "Φόρμα Επικοινωνίας"
 };
 
 const Page = () => {

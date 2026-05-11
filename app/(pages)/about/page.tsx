@@ -5,6 +5,7 @@ import About from "~/components/widgets/About";
 
 export const metadata: Metadata = {
   title: 'Βιογραφικό',
+  description: "Λίγα λόγια για εμένα"
 };
 
 export default function Page() {

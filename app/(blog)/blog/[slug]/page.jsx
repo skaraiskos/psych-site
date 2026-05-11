@@ -29,9 +29,15 @@ export async function generateMetadata({ params}) {
   
   return {
     title: post.title,
-    description: post.description,
+    description: post.description || "Άρθρο από το blog της Σταυρούλας Μαυρογόνατου για θέματα ψυχολογίας και ψυχοθεραπείας.",
     openGraph: {
-      images: [post.image],
+      title: post.title,
+      description: post.description,
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${post.slug}/opengraph-image`,
+        },
+      ],
     },
   };
 }

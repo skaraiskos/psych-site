@@ -41,7 +41,16 @@ export async function findLatestPosts({ page = 1, pageSize = 6 } = {}) {
   };
 };
 
-/** */
+/**
+ * @typedef {{
+ *   slug: string,
+ *   title: string,
+ *   description?: string,
+ *   image?: string,
+ *   content: string
+ * }} Post
+ */
+/** @returns {Post | null} */
 export const findPostBySlug = async (slug) => {
   if (!slug) return null;
 
@@ -53,7 +62,10 @@ export const findPostBySlug = async (slug) => {
       ...frontmatter,
       content,
     };
-  } catch (e) {}
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
 
   return null;
 };

@@ -7,6 +7,7 @@ import { findLatestPosts } from "~/utils/posts";
 
 export const metadata: Metadata = {
   title: "Άρθρα",
+  description: "Άρθρα και ενημερωτικό περιεχόμενο γύρω από την ψυχολογία, την ψυχοθεραπεία και θέματα ψυχικής υγείας."
 };
 
 type Props = {

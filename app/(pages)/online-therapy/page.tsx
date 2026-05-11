@@ -5,6 +5,7 @@ import OnlineTherapy from '~/components/widgets/OnlineTherapy';
 
 export const metadata: Metadata = {
   title: 'Online Θεραπείες',
+  description: "Online συνεδρίες ψυχοθεραπείας και συμβουλευτικής υποστήριξης"
 };
 
 const Page = () => {

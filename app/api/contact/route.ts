@@ -38,8 +38,13 @@ export async function POST(req: Request) {
     }
 
     //bots hammering, refresh spam, script loops
-    const recentHits = globalThis.__contactHits || new Map();
-    globalThis.__contactHits = recentHits;
+    const globalForRateLimit = globalThis as typeof globalThis & {
+      __contactHits?: Map<string, number>;
+    };
+
+    const recentHits = globalForRateLimit.__contactHits || new Map();
+
+    globalForRateLimit.__contactHits = recentHits;
 
     const now = Date.now();
     const lastHit = recentHits.get(ip);
@@ -91,7 +96,7 @@ export async function POST(req: Request) {
     const cleanMail = sanitize(mail);
 
     const email = await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
+      from: "Σταυρούλα Μαυρογόνατου <info@stavroulamavrogonatou.gr>",
       to: process.env.CONTACT_TO_EMAIL,
       subject: "Νέο μήνυμα από την ιστοσελίδα",
       replyTo: cleanMail,
@@ -112,9 +117,10 @@ export async function POST(req: Request) {
     } else {
       try {
         await resend.emails.send({
-          from: "Contact Form <onboarding@resend.dev>",
+          from: "Σταυρούλα Μαυρογόνατου <info@stavroulamavrogonatou.gr>",
           to: cleanMail,
           subject: "Λάβαμε το μήνυμά σας",
+          replyTo: process.env.CONTACT_TO_EMAIL,
           text:  `
             Γεια σας,
 

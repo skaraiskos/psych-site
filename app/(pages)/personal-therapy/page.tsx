@@ -5,6 +5,7 @@ import PersonalTherapy from '~/components/widgets/PersonalTherapy';
 
 export const metadata: Metadata = {
   title: 'Ψυχοθεραπεία Ενηλίκων',
+  description: "Ψυχοθεραπεία σε ένα πλαίσιο συνεργασίας, ασφάλειας και εμπιστοσύνης"
 };
 
 const Page = () => {

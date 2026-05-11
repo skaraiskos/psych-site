@@ -42,15 +42,32 @@ const InstagramSection = () => {
       </div>
 
       {/*bottom divider*/}
-      <div className="absolute bottom-[-1px] left-0 w-full leading-none">
+      <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none">
         <svg
           className="block w-full h-[90px] text-theme6 rotate-180"
+          style={{ overflow: "hidden" }}
           viewBox="0 30 1440 120"
           preserveAspectRatio="none"
         >
           <path
             fill="currentColor"
             d="M0,64 C240,120 980,0 1440,64 L1440,0 L0,0 Z"
+          />
+        </svg>
+      </div>
+
+      {/*overlay wave*/}
+      <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none">
+        <svg 
+          viewBox="0 30 1440 120"
+          className="block w-full h-[90px] text-white rotate-180"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,64 C240,120 980,0 1440,64"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="20"
           />
         </svg>
       </div>
@@ -106,8 +123,8 @@ const InstagramSection = () => {
           <div className="space-y-8 text-sm leading-relaxed text-justify">
 
             <p>
-              Το ΨυχΑγωγούμε είναι ένας χώρος αφιερωμένος στην οικογένεια.
-              Δημιουργήθηκε για να προσφέρει συμβουλές και ερεθίσματα για σκέψη γύρω από τη γονεϊκότητα, ενισχύοντας τον προβληματισμό και εμπνέοντας τους γονείς να αναζητήσουν περαιτέρω γνώση και στήριξη, όταν το χρειάζονται.
+              Το ΨυχΑγωγούμε είναι ένας διαδικτυακός χώρος για την οικογένεια.
+              Δημιουργήθηκε για να προσφέρει ερεθίσματα για σκέψη γύρω από τη γονεϊκότητα, ενισχύοντας τον προβληματισμό και εμπνέοντας τους γονείς να αναζητήσουν περαιτέρω γνώση και στήριξη, όταν το χρειάζονται.
             </p>
 
             <p>

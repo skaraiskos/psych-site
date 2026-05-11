@@ -5,6 +5,7 @@ import Services from '~/components/widgets/Services';
 
 export const metadata: Metadata = {
   title: 'Υπηρεσίες',
+  description: "Υπηρεσίες ψυχοθεραπείας και συμβουλευτικής υποστήριξης με στόχο την προσωπική ανάπτυξη, την ενδυνάμωση και τη βελτίωση της ψυχικής ευεξίας.",
 };
 
 const Page = () => {

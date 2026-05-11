@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { PurposeProps } from "~/shared/types";
 import Headline from "../common/Headline";
@@ -44,8 +45,40 @@ const mobilePositions = [
 const desktopOffsets = [20, -20, 20, -20];
 const mobileRotations = [8, 4, 10, 14];
 
-
 const Purpose = ({ id, header }: PurposeProps) => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [isSwitching, setIsSwitching] = useState(false);
+  const [isLeaving, setIsLeaving] = useState(false);
+
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting && activeIndex !== null) {
+          setIsLeaving(true);
+
+          // delay reset so animation can play
+          setTimeout(() => {
+            setActiveIndex(null);
+            setIsLeaving(false);
+          }, 250);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [activeIndex]);
+
+  const activeItem = activeIndex !== null ? pillars[activeIndex] : null;
+  const ActiveIcon = activeItem?.icon;
+  const ActiveTitle = activeItem?.title;
+  const ActiveText = activeItem?.text;
+
   return (
     <section
       id={id}
@@ -66,7 +99,10 @@ const Purpose = ({ id, header }: PurposeProps) => {
       </div>
 
       {/* HEADER */}
-      <div className="max-w-6xl mx-auto px-6 text-center mb-4">
+      <div 
+        className="max-w-6xl mx-auto px-6 text-center mb-4"
+        onClick={() => setActiveIndex(null)}
+      >
         <div
           className="pointer-events-none mb-6 mx-auto md:mb-12 text-center"
         >
@@ -74,7 +110,10 @@ const Purpose = ({ id, header }: PurposeProps) => {
             Υποστήριξη για Εσάς και την Οικογένειά σας
           </h2>
           <p className="pointer-events-none mx-auto mt-4 max-w-5xl text-base text-white text-center">
-              Στόχος μου στη θεραπευτική διαδικασία είναι να δημιουργείται ένας ασφαλής χώρος, όπου κάθε άνθρωπος μπορεί να κατανοήσει σε βάθος τον εαυτό του και τις δυσκολίες που βιώνει, να επεξεργαστεί όσα τον επιβαρύνουν και να αναπτύξει πιο λειτουργικούς τρόπους σκέψης και διαχείρισης ώστε  να χτίσει μια πιο ουσιαστική σχέση με τον εαυτό και τους άλλους.
+              Στόχος μου είναι να δημιουργείται ένας ασφαλής χώρος, όπου κάθε άνθρωπος που δουλεύει μαζί μου θεραπευτικά να μπορεί να κατανοήσει σε βάθος τον εαυτό του και τις δυσκολίες που βιώνει, να επεξεργαστεί όσα τον επιβαρύνουν και να αναπτύξει πιο λειτουργικούς τρόπους σκέψης και διαχείρισης, ώστε να χτίσει μια πιο ουσιαστική σχέση με τον εαυτό.
+          </p>
+          <p className="pointer-events-none mx-auto mt-4 max-w-5xl text-base text-white text-center">
+              Μέσα από αυτή τη διαδικασία δίνεται η ευκαιρία να έρθει πιο κοντά στις ανάγκες, στα συναισθήματα και στις βαθύτερες επιθυμίες του, ενισχύοντας την εσωτερική του ηρεμία και τον τρόπο με τον οποίο σχετίζεται με τους ανθρώπους γύρω του, την οικογένεια και τις σημαντικές του σχέσεις.
           </p>
           <p className="pointer-events-none mx-auto mt-4 max-w-5xl text-base text-white text-center">
               Το παρελθόν αποτελεί αναπόσπαστο κομμάτι της εμπειρίας μας και, όταν το επεξεργαζόμαστε κατάλληλα, μπορεί να αποτελέσει πηγή γνώσης, κατανόησης και πολύτιμων «μαθημάτων».
@@ -82,11 +121,11 @@ const Purpose = ({ id, header }: PurposeProps) => {
         </div>
       </div>
 
-      {/* ================= CIRCLES ================= */}
+      {/* ================= CIRCLES Component================= */}
       <div className="mt-10 relative">
 
         {/* MOBILE (radial) */}
-        <motion.div
+        {/*<motion.div
           className="relative md:hidden h-[350px] w-full max-w-sm mx-auto"
           initial={{ rotate: -8, opacity: 0 }}
           whileInView={{ rotate: -8, opacity: 1 }}
@@ -129,6 +168,123 @@ const Purpose = ({ id, header }: PurposeProps) => {
                 </motion.div>
               </div>
               );
+          })}
+        </motion.div>*/}
+        <motion.div
+          ref={sectionRef}
+          className="relative md:hidden h-[350px] w-full max-w-sm mx-auto"
+          initial={{ rotate: -8, opacity: 0 }}
+          whileInView={{ rotate: -8, opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{
+            type: "spring",
+            stiffness: 140,
+            damping: 12,
+          }}
+          onClick={() => setActiveIndex(null)}
+        >
+
+          {/* CENTER POPUP COMPONENT */}
+          <AnimatePresence>
+            {activeIndex !== null && (
+              <motion.div
+                key="center"
+                className="absolute top-[28%] left-[22%] -translate-x-1/2 -translate-y-1/2 z-20"
+                initial={{ scale: 0, opacity: 0, rotate: 8 }}
+                animate={{
+                  scale: isLeaving ? 0 : 1,
+                  opacity: isLeaving ? 0 : 1,
+                }}
+                exit={{ scale: 0, opacity: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 160,
+                  damping: 18,
+                }}
+              >
+                <div className="
+                  w-52 h-40 rounded-3xl shadow-xl justify-center text-center p-1
+                  relative
+                  bg-theme6
+                  flex flex-col justify-center items-center
+                  overflow-hidden
+                  shadow-lg shadow-[0_0_20px_rgba(255,223,0,0.6)]
+                  ">
+                  {ActiveIcon && (
+                    <ActiveIcon className="w-10 h-10 text-theme4 mb-2" />
+                  )}
+                  <p className="text-xs text-theme4
+                      px-1 text-center overflow-hidden mt-1 pointer-events-none">
+                    {ActiveText}
+                  </p>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* CIRCLES */}
+          {pillars.map(({ title, icon: Icon }, i) => {
+            const isActive = activeIndex === i;
+            const isDimmed = activeIndex !== null && activeIndex !== i;
+
+            return (
+              <div
+                key={i}
+                className={twMerge(
+                  "absolute flex items-center justify-center",
+                  mobilePositions[i]
+                )}
+              >
+                <motion.div
+                  onClick={(e) => {
+                    e.stopPropagation();
+
+                    if (activeIndex === i) {
+                      console.log('clicked same');
+                      setActiveIndex(null);
+                      return;
+                    }
+                    console.log('clicked other');
+                    setIsSwitching(true);
+
+                    setActiveIndex(i);
+
+                    setTimeout(() => {
+                      setIsSwitching(false);
+                    }, 200);
+                  }}
+                  initial={{ y: -80, opacity: 0, rotate: 0, transition: { delay: i * 0.12 }}}
+                  whileInView={{ y: 0, opacity: 1, rotate: mobileRotations[i] }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 18
+                  }}
+                  animate={{
+                    scale: isActive ? 0.25 : 1,
+                    opacity: isDimmed ? 0.3 : 1,
+                  }}
+                  className="w-28 h-28 rounded-full bg-theme6 flex flex-col items-center justify-center text-center shadow-lg shadow-[0_10px_30px_rgba(255,223,0,0.25)] cursor-pointer"
+                >
+                  <AnimatePresence mode="wait">
+                    {!isActive && (
+                      <motion.div
+                        key="content"
+                        initial={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="flex flex-col items-center"
+                      >
+                        {Icon && <Icon className="w-6 h-6 mb-1 text-theme4" />}
+                        <p className="text-xs font-medium text-theme4 px-2">
+                          {title}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              </div>
+            );
           })}
         </motion.div>
 
