@@ -16,7 +16,9 @@ type Props = {
 };
 
 export default async function BlogPage({ searchParams }: Props ) {
-  const page = parseInt(searchParams?.page || "1", 10);
+  const params = await searchParams ?? {};
+
+  const page = parseInt(params.page || "1", 10);
   const pageSize = 6;
 
   const { posts, total } = await findLatestPosts({ page, pageSize });

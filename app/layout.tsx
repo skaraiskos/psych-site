@@ -6,6 +6,9 @@ import Providers from '~/components/atoms/Providers';
 import Header from '~/components/widgets/Header';
 import Footer from '~/components/widgets/Footer';
 import ScrollToTopButton from "~/components/common/ScrollToTopButton";
+import CookieConsentComponent from "~/components/common/CookieConsent";
+import AnalyticsProvider from "~/components/common/AnalyticsProvider";
+import { CookieConsentProvider } from "~/components/common/CookieConsentProvider";
 
 import { Comfortaa as CustomFont } from 'next/font/google';
 import ToasterProvider from "~/components/common/ToasterProvider";
@@ -25,23 +28,31 @@ export const metadata: Metadata = {
   description: SITE.description,
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en" className={`${customFont.variable} font-sans`}>
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body className="motion-safe:scroll-smooth tracking-tight antialiased text-gray-900 theme-light">
-        <Providers>
-          <Header />
-          <ToasterProvider/>
-          <main>
-            {children}
+        <CookieConsentProvider>
+          <Providers>
+            <CookieConsentComponent />
+            <Header />
+            <ToasterProvider/>
+            <main>
+              {children}
+            </main>
             <ScrollToTopButton />
-          </main>
-          <Footer />
-        </Providers>
+            <Footer />
+            <AnalyticsProvider />
+          </Providers>
+        </CookieConsentProvider>
       </body>
     </html>
   );

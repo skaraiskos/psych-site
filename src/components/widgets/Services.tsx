@@ -46,7 +46,7 @@ const services = [
   }
 ];
 
-const Features2 = () => (
+const Services = () => (
 
 <section className="relative py-0 w-full bg-theme2">
   <div className="relative text-center py-4 md:mx-16">
@@ -58,22 +58,22 @@ const Features2 = () => (
         transition={{ duration: 0.6, delay: i * 0.1 }}
         viewport={{ once: true }}
         className={`grid grid-cols-1 md:grid-cols-2 ${
-          i % 2 === 1 ? "md:grid-cols-[1fr_1.3fr]" : "md:grid-cols-[1.3fr_1fr]"
-        } items-center py-12 mx-auto md:mx-8 gap-8`}
+          i % 2 === 1 ? "lg:grid-cols-[1fr_1.3fr]" : "lg:grid-cols-[1.3fr_1fr]"
+        } items-center py-4 md:py-8 mx-auto md:mx-8 md:gap-8`}
       >
         {/* Image */}
-        <div className={`relative mb-16 mt-6 md:my-0 h-[200px] md:h-[360px] lg:h-[420px] border-theme4 ${
+        <div className={`relative mb-4 md:mb-16 mt-6 md:my-0 h-[200px] md:h-[360px] lg:h-[420px] border-theme4 ${
           i % 2 === 1 ? "md:col-start-2" : "md:col-start-1"
         } md:row-start-1`}>
 
           <div
-            className={`absolute top-1/2 md:top-[60%] left-1/2 w-[40%] md:w-[60%] aspect-square border-8 border-theme4 block z-0 transform -translate-x-1/2 -translate-y-1/2 ${
+            className={`absolute top-1/2 md:top-[50%] left-1/2 w-[40%] md:w-[60%] aspect-square border-8 border-theme4 block z-0 transform -translate-x-1/2 -translate-y-1/2 ${
               i % 2 === 1 ? "-rotate-6" : "rotate-6"
             }`}
           />
 
           
-          <div className={`absolute top-[40%] md:top-1/2 left-1/2 w-[55%] md:w-[80%] rounded-3xl overflow-hidden aspect-[5/3] z-10 transform -translate-x-1/2 -translate-y-1/3`}>
+          {/*<div className={`absolute top-[40%] md:top-1/2 left-1/2 w-[55%] md:w-[80%] rounded-3xl overflow-hidden aspect-[5/3] z-10 transform -translate-x-1/2 -translate-y-1/3`}>
             <Image
               src={s.image}
               alt={s.title}
@@ -81,11 +81,22 @@ const Features2 = () => (
               loading="lazy"
               className="object-cover shadow-md brightness-75"
             />
+          </div>*/}
+          <div className="absolute inset-0 flex items-center justify-center z-10">
+            <div className="relative w-[55%] md:w-[80%] aspect-[5/3] rounded-3xl overflow-hidden">
+              <Image
+                src={s.image}
+                alt={s.title}
+                fill
+                sizes="(max-width: 768px) 55vw, 80vw"
+                className="object-cover shadow-md brightness-75"
+              />
+            </div>
           </div>
         </div>
 
         {/* Text */}
-        <div className={`flex flex-col justify-center h-[200px] md:h-[360px] lg:h-[420px] md:row-start-1 mx-10 md:mx-0 ${
+        <div className={`flex flex-col justify-center md:h-[360px] lg:h-[420px] md:row-start-1 mx-8 md:mx-0 ${
           i % 2 === 1 ? "md:col-start-1 md:text-left" : "md:col-start-2 md:text-right"
         }`}>
           <div className="flex-1 flex flex-col justify-center">
@@ -124,4 +135,4 @@ const Features2 = () => (
 </section>
 );
 
-export default Features2;
+export default Services;

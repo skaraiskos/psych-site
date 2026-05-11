@@ -5,11 +5,11 @@ import path from 'path';
 import md from 'markdown-it';
 
 export const metadata: Metadata = {
-  title: 'Terms and conditions',
+  title: 'Cookies',
 };
 
 const Page = () => {
-  const filePath = path.join(process.cwd(), 'src/content/terms/terms.md');
+  const filePath = path.join(process.cwd(), 'src/content/cookies/cookies.md');
   const fileContent = fs.readFileSync(filePath, 'utf8');
 
   return (

@@ -10,6 +10,8 @@ import {
 import { useRef } from 'react';
 import { motion, useInView } from "framer-motion";
 
+import CookieSettingsButton from '~/components/common/CookieSettingsButton';
+
 const content = {
     boxTitle: 'Σταυρούλα Μαυρογόνατου',
     services : [
@@ -32,7 +34,7 @@ const content = {
     ],
     socials: [
       { label: 'Instagram', icon: IconBrandInstagram, href: 'https://instagram.com/psych.agogoume' },
-      { label: 'Facebook', icon: IconBrandFacebook, href: '#' },
+      /*{ label: 'Facebook', icon: IconBrandFacebook, href: '#' },*/
     ],
     links1Title: 'Στοιχεία Επικοινωνίας',
     links1:[
@@ -42,8 +44,9 @@ const content = {
     ],
     links2Title: 'Σύνδεσμοι',
     links2:[
-      { label: 'Άρθρα', href: '/blog' },
       { label: 'Όροι & Προϋποθέσεις', href: '/privacy' },
+      { label: 'Προσωπικά Δεδομένα', href: '/cookies' },
+      { label: 'Πολιτική Απορρήτου', href: '/terms' }
     ]
   };
 
@@ -68,9 +71,9 @@ const Footer = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             viewport={{ once: true, amount: 0.2}}
             transition={{ duration: 0.6}}
-            className="relative md:rounded-3xl bg-theme4 px-16 pt-6 md:-mt-12 z-10 max-w-xl h-[400px] flex flex-col justify-center items-left"
+            className="relative md:rounded-3xl bg-theme4 px-6 md:px-16 pt-6 md:-mt-12 z-10 max-w-2xl h-[330px] lg:h-[350px] xl:h-[330px] flex flex-col justify-center items-left"
           >
-            <h2 className="text-2xl font-semibold text-white mb-8  pointer-events-none">{content.boxTitle}</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold text-white mb-4  pointer-events-none">{content.boxTitle}</h2>
             {content.services.map((s, i) => (
               <motion.div
                 key={i}
@@ -78,7 +81,7 @@ const Footer = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className={"my-3 mx-4"}
+                className={"my-2 mx-4"}
               >
                 <a href={s.href} className="hover:text-theme6 text-white transition-colors">{s.text}</a>
               </motion.div>
@@ -109,25 +112,28 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="p-6 md:mt-6"
+            className="px-6 md:p-2"
           >
 
             {/* Top text */}
             <div className="mb-10 max-w-2xl pointer-events-none">
-              <h3 className="text-lg font-semibold">
+              <h3 className="md:hidden block text-base font-semibold">
+                Μπορείτε να επικοινωνήσετε για πληροφορίες ή για να κλείσετε ραντεβού δια ζώσης ή διαδικτυακά.
+              </h3>
+              <h3 className="hidden md:block text-base font-semibold">
                 Μπορείτε να επικοινωνήσετε για πληροφορίες ή για να
               </h3>
-              <h3 className="text-lg font-semibold mb-3">
+              <h3 className="hidden md:block text-base font-semibold mb-3">
                 κλείσετε ραντεβού δια ζώσης ή διαδικτυακά.
               </h3>
 
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-gray-600 text-base leading-relaxed">
                 Διαθέσιμα και πρωινά ραντεβού
               </p>
             </div>
 
             {/* Columns */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:pl-10 md:h-[200px] text-sm">
+            <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-12 md:h-[180px] text-sm">
 
               {/* Column 1 */}
               <div className="flex flex-col justify-start">
@@ -136,7 +142,7 @@ const Footer = () => {
                 </h3>
 
                 {content.links1.map((s, i) => (
-                  <div key={i} className="flex items-center space-x-2 mt-6">
+                  <div key={i} className="flex items-center space-x-2 mt-4">
                     {s.icon && <s.icon className="h-5 w-5 text-gray-500" />}
                     <span className="text-gray-700">{s.text}</span>
                   </div>
@@ -153,7 +159,7 @@ const Footer = () => {
                   <a
                     key={i}
                     href={s.href}
-                    className="hover:text-theme4 transition-colors mt-6"
+                    className="hover:text-theme4 transition-colors mt-4"
                   >
                     {s.label}
                   </a>
@@ -173,10 +179,10 @@ const Footer = () => {
           <p>
             © 2026 Σταυρούλα Μαυρογόνατου. All rights reserved.
           </p>
-
-          <p>
+          <CookieSettingsButton />
+          {/*<p>
             Designed & Developed by Sotiris Karaiskos.
-          </p>
+          </p>*/}
 
         </div>
       </div>

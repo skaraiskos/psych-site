@@ -52,7 +52,7 @@ const Purpose = ({ id, header }: PurposeProps) => {
       className="relative w-full bg-theme4 pt-20 pb-24"
     >
       {/* TOP DIVIDER */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
+      <div className="absolute top-[-1px] left-0 w-full overflow-hidden leading-none">
         <svg
           className="block w-full h-[90px] text-theme2"
           viewBox="0 40 1440 120"

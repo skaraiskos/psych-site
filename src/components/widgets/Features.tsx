@@ -30,7 +30,7 @@ const featuresHome={
       icon: IconUsers,
       callToAction: {
         text: 'Μάθε περισσότερα',
-        href: '/',
+        href: '/parenting',
       },
     },
     {
@@ -61,7 +61,7 @@ const Features = () => {
     <section id={featuresHome.id} className="relative w-full bg-theme6 py-12">
 
       {/*top divider*/}
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
+      <div className="absolute top-[-1px] left-0 w-full overflow-hidden leading-none">
         <svg
           className="block w-full h-[90px] text-theme4"
           viewBox="0 30 1440 120"
@@ -75,7 +75,7 @@ const Features = () => {
       </div>
 
       {/*overlay wave*/}
-      <div className="absolute top-0 left-0 w-full opacity-90 overflow-hidden leading-none">
+      <div className="absolute top-[-1px] left-0 w-full opacity-90 overflow-hidden leading-none">
         <svg 
           viewBox="0 30 1440 120"
           className="w-full h-[80px] text-white"
@@ -91,7 +91,7 @@ const Features = () => {
       </div>
 
       {/*bottom divider*/}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+      <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none">
         <svg
           className="block w-full h-[40px] text-theme6 rotate-180"
           viewBox="0 10 1440 120"
@@ -167,7 +167,7 @@ const Features = () => {
                   <span className="relative flex items-center">
                     
                     {/* Text */}
-                    <span className="transition-transform duration-500 ease-out group-hover:-translate-x-2">
+                    <span className="transition-transform duration-500 ease-out group-hover:-translate-x-2 text-center">
                       {callToAction.text}
                     </span>
 

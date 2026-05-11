@@ -109,7 +109,7 @@ const Form = ({
   return (
     <form
       id="contactForm"
-      className={twMerge("", containerClass)}
+      className={twMerge("w-full min-w-0", containerClass)}
       onSubmit={handleSubmit}
     >
       <input type="text" name="company" className="hidden" />
@@ -147,7 +147,7 @@ const Form = ({
                   }}
                   placeholder={placeholder}
                   className={twMerge(
-                    "mb-2 w-full border border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0",
+                    "mb-2 w-full box-border border border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0",
                     inputClass
                   )}
                 />
@@ -173,7 +173,7 @@ const Form = ({
               }}
               placeholder={textarea.placeholder}
               className={twMerge(
-                "mb-2 w-full border border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0",
+                "mb-2 w-full box-border border border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0",
                 textareaClass
               )}
             />

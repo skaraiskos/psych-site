@@ -67,15 +67,15 @@ export function renderText(text: string) {
 
 const PersonalTherapy = () => {
   return (
-      <section className="relative w-full min-h-screen bg-theme2 text-justify">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-4 items-center pt-8 z-1">
+      <section className="relative w-full min-h-screen bg-theme2 md:text-justify">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-4 items-center pt-8 md:pb-4 z-1">
           {data.image && (
           <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="relative w-full w-[85%] mx-auto md:mx-1 md:w-[72%] h-[300px] md:h-[430px] md:left-[15%]"
+              className="relative w-[85%] mx-auto md:mx-1 md:w-[72%] h-[300px] md:h-[430px] md:left-[15%]"
           >
             <Image
               src={data.image}
@@ -119,7 +119,7 @@ const PersonalTherapy = () => {
           </div>
         </div>
 
-        <div className="md:mt-6 md:max-w-7xl mx-auto w-[81%] md:w-[90%]">
+        <div className="xl:mt-6 md:max-w-7xl mx-auto w-[81%] md:w-[90%]">
           <div className="text-base leading-relaxed mb-4">
             {data.description2.split("split").map((line, i) => (
               <p key={i} className="mb-4">

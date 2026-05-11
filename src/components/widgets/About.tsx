@@ -65,24 +65,26 @@ const AboutPage = () => {
     <section className="w-full bg-theme2 text-text md:text-base text-justify">
 
       {/* ===================== HERO BIO FLOW ===================== */}
-      <div className="max-w-7xl mx-auto px-6 pt-24 pb-0 grid md:grid-cols-[420px_1fr] gap-16">
+      <div className="max-w-7xl mx-auto px-6 pt-24 pb-0 grid md:grid-cols-[420px_1fr] gap-16 items-start">
 
         {/* LEFT: sticky visual anchor */}
-        <div className="relative md:sticky md:top-24 h-[520px]">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative w-full h-full"
-          >
-            <Image
-              src={portraitImg}
-              alt="Portrait"
-              fill
-              className="object-cover rounded-xl shadow-md"
-            />
-          </motion.div>
+        <div className="sticky md:top-24 self-start">
+          <div className="relative h-[520px] w-full">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative w-full h-full"
+            >
+              <Image
+                src={portraitImg}
+                alt="Portrait"
+                fill
+                className="object-cover rounded-xl shadow-md"
+              />
+            </motion.div>
+          </div>
         </div>
 
         {/* RIGHT: narrative flow */}
@@ -134,10 +136,10 @@ const AboutPage = () => {
       </div>
 
       {/* ===================== PHILOSOPHY BAND ===================== */}
-      <div className="relative w-full py-28 md:my-10 text-center overflow-hidden">
+      <div className="relative w-full py-28 md:my-10 text-center">
 
         {/*top divider*/}
-        <div className="absolute top-0 left-0 w-full overflow-hidden leading-none z-20">
+        <div className="absolute top-[-1px] left-0 w-full overflow-hidden leading-none z-20">
           <svg
             className="block w-full h-[90px] text-theme2"
             viewBox="0 30 1440 120"
@@ -151,7 +153,7 @@ const AboutPage = () => {
         </div>
 
         {/*overlay wave*/}
-        <div className="absolute top-0 left-0 w-full opacity-90 overflow-hidden leading-none z-20">
+        <div className="absolute top-[-1px] left-0 w-full opacity-90 overflow-hidden leading-none z-20">
           <svg 
             viewBox="0 30 1440 120"
             className="w-full h-[80px] text-theme4"
@@ -167,7 +169,7 @@ const AboutPage = () => {
         </div>
 
         {/*bottom divider*/}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
+        <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none z-20">
           <svg
             className="block w-full h-[40px] text-theme2 rotate-180"
             viewBox="0 10 1440 120"

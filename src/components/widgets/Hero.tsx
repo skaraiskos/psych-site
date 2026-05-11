@@ -7,14 +7,16 @@ const Hero = ({
   image2,
 }: HeroProps) => {
   return (
-    <section className="relative w-full min-h-screen bg-theme2 overflow-hidden">
+    <section className="relative w-full bg-theme2 overflow-hidden">
 
       {/* ================= MOBILE ================= */}
-      <div className="md:hidden flex flex-col min-h-screen bg-theme2">
+      <div className="md:hidden flex flex-col bg-theme2">
 
         {/* TOP — IMAGE */}
-        <div className="h-[80vh] flex items-center justify-center px-12 py-12">
-          <div className="relative w-full h-full max-w-md">
+        <div className="flex items-center justify-center px-12 pt-12">
+
+          <div className="relative w-full max-w-md aspect-[3/4] max-h-[70vh]">
+
             {image && (
               <Image
                 src={image.src}
@@ -26,6 +28,7 @@ const Hero = ({
             )}
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent rounded-2xl" />
+
           </div>
         </div>
 

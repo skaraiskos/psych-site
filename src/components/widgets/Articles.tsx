@@ -16,7 +16,11 @@ const Articles = ({ posts = [] }) => {
 
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
-    const width = scrollRef.current.offsetWidth;
+    const card = scrollRef.current.querySelector(".article-card");
+
+    if (!card) return;
+
+    const width = card.clientWidth + 24; // + gap
 
     scrollRef.current.scrollBy({
       left: dir === "left" ? -width : width,
@@ -25,10 +29,10 @@ const Articles = ({ posts = [] }) => {
   };
 
   return (
-    <section className="relative w-full bg-theme2 py-20">
+    <section className="relative w-full bg-theme2 py-24">
 
       {/* TOP DIVIDER */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
+      <div className="absolute top-[-1px] left-0 w-full overflow-hidden leading-none">
         <svg
           className="block w-full h-[90px] text-theme6"
           viewBox="0 20 1440 120"
@@ -52,14 +56,14 @@ const Articles = ({ posts = [] }) => {
         {/* Arrows (positioned relative to wrapper) */}
         <button
           onClick={() => scroll("left")}
-          className="block absolute -left-0 md:-left-6 top-1/2 -translate-y-1/2 group p-4 opacity-50 hover:opacity-100 transition"
+          className="block absolute -left-0 md:left-2 2xl:-left-6 top-1/2 -translate-y-1/2 group p-4 opacity-50 hover:opacity-100 transition"
         >
           <div className="w-6 h-6 border-l-2 border-b-2 border-gray-500 rotate-45 transition-all duration-300 group-hover:-translate-x-1 group-hover:scale-110" />
         </button>
 
         <button
           onClick={() => scroll("right")}
-          className="block absolute -right-0 md:-right-6 top-1/2 -translate-y-1/2 group p-4 opacity-50 hover:opacity-100 transition"
+          className="block absolute -right-0 md:right-2 2xl:-right-6 top-1/2 -translate-y-1/2 group p-4 opacity-50 hover:opacity-100 transition"
         >
           <div className="w-6 h-6 border-r-2 border-t-2 border-gray-500 rotate-45 transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110" />
         </button>
@@ -70,7 +74,10 @@ const Articles = ({ posts = [] }) => {
         {/* Slider */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar"
+          className="
+            flex gap-6 overflow-x-auto scroll-smooth no-scrollbar
+            snap-x snap-mandatory px-0 md:px-16
+          "
         >
           {posts.map(({ slug, title, image, publishDate, excerpt }) => {
             const { day, month } = formatShortDate(publishDate);
@@ -78,7 +85,12 @@ const Articles = ({ posts = [] }) => {
             return (
               <div
                 key={slug}
-                className="group flex-shrink-0 w-[48%] md:w-[32%]"
+                className="
+                  article-card
+                  group flex-shrink-0
+                  w-full md:w-[32%]
+                  snap-center
+                "
               >
                   {/* Card */}
                   <div className="overflow-hidden transition-all duration-300">

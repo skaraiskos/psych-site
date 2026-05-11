@@ -50,7 +50,7 @@ type Props = {
 const content = {
   socials: [
     { label: "Instagram", icon: IconBrandInstagram, href: "https://instagram.com/psych.agogoume" },
-    { label: "Facebook", icon: IconBrandFacebook, href: "#" },
+    /*{ label: "Facebook", icon: IconBrandFacebook, href: "#" },*/
   ] as SocialItem[],
   links1: [
     { label: "Διεύθυνση", icon: IconMapPinFilled, text: "Αγίου Ιωάννου 63, Αγία Παρασκευή" },

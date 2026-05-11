@@ -32,7 +32,7 @@ const data = {
                     Η **Ενεργητική Ακρόαση** και τα **Μηνύματα-Εγώ** αποτελούν δύο, μεταξύ πολλών άλλων, εργαλεία επικοινωνίας στην προσέγγιση του Dr. Gordon και διδάσκονται βιωματικά μέσω role plays.',
     descriptionBotMid: 'Η Ενεργητική Ακρόαση βοηθά τον γονέα να συνδεθεί με τον εσωτερικό κόσμο του παιδιού, δείχνοντας κατανόηση και αποδοχή για τα συναισθήματα και τις ανάγκες του.split\
                     Τα Μηνύματα-Εγώ, από την άλλη, δίνουν στον γονέα τη δυνατότητα να εκφράσει τα δικά του συναισθήματα και τις προσωπικές του ανάγκες, χωρίς επίκριση ή κατηγορία προς το παιδίsplit\
-                    Όταν τα εργαλεία χρησιμοποιούνται σταθερά και με συνέπεια, αυτά τελικά γίνονται δεξιότητες για τον γονέα. Μέσα από την δημοκρατική-ενσυναισθητικη διαπαιδαγώγηση που εκπαιδεύονται οι γονείς, δημιουργείται ένα κλίμα ανοιχτής, ειλικρινούς και αμφίδρομης επικοινωνίας. Σε ένα τέτοιο περιβάλλον, όπου και ο γονέας και το παιδί νιώθουν ότι ακούγονται και κατανοούνται, όπου τα όρια μπαίνουν με σταθερότητα και καλοσύνη, η επίλυση των συγκρούσεων γίνεται πιο αποτελεσματική.',
+                    Μέσα από την δημοκρατική-ενσυναισθητικη διαπαιδαγώγηση που εκπαιδεύονται οι γονείς, δημιουργείται ένα κλίμα ανοιχτής, ειλικρινούς και αμφίδρομης επικοινωνίας. Σε ένα τέτοιο περιβάλλον, όπου και ο γονέας και το παιδί νιώθουν ότι ακούγονται και κατανοούνται, όπου τα όρια μπαίνουν με σταθερότητα και καλοσύνη, η επίλυση των συγκρούσεων γίνεται πιο αποτελεσματική.',
     quote: 'Η γονεϊκότητα, ως συνεχής δυναμική διαδικασία μάθησης και προσαρμογής, δεν βασίζεται αποκλειστικά στο ένστικτο, αλλά χρειάζεται επίγνωση, επεξεργασία και επιλογή. Είναι μια πορεία που καλλιεργείται μέσα από γνώση, αυτοπαρατήρηση, επεξεργασία και την κατανόηση των αναγκών των παιδιών μας ανάλογα το αναπτυξιακό στάδιο που βρίσκονται, την ιδιοσυγκρασία τους και τις ιδιαίτερες ανάγκες του οικογενειακού συστήματος. Κάθε γονέας καλείται να πλοηγηθεί ανάμεσα σε βιώματα  από τον δικό του τρόπο ανατροφής, στις πεποιθήσεις που φέρει από το παρελθόν και στις συνειδητές επιλογές που κάνει για το παρόν και το μέλλον του παιδιού του. Ουσιαστικό κομμάτι της εκπαίδευσης είναι ότι οι γονείς αντιμετωπίζονται ως άνθρωποι με ανθρώπινα ελαττώματα, που βιώνουν αληθινά συναισθήματά και έχουν ανάγκη από κατανόηση και στήριξη.split\
             Το Εργαστήριο του Αποτελεσματικού Γονέα είναι ένα ψυχοεκπαιδευτικό πρόγραμμα, δεν αποτελεί εξατομικευμένη θεραπεία ή συμβουλευτική. Οι γονείς μοιράζονται, αν το επιθυμούν, εμπειρίες και προκλήσεις και εκπαιδεύονται στις αντίστοιχες δεξιότητες λαμβάνοντας την ανάλογη υποστήριξη και καθοδήγηση.split\
             Στόχος δεν είναι να γίνετε τέλειοι γονείς, ούτε να μην ξανακάνετε ‘λάθη’. Ο τέλειος γονιός δεν υπάρχει, αλλά ο ‘αρκετά καλός γονέας’, αυτός δηλαδή που ανταποκρίνεται με συνέπεια, με ενσυναίσθηση και με διάθεση να επανορθώσει.split\
@@ -73,10 +73,10 @@ const Gordons = () => {
   }, [slideIndex, data.images]);
 
 return (
-  <section className="relative w-full min-h-screen bg-theme2 text-justify">
+  <section className="relative w-full min-h-screen bg-theme2 lg:text-justify">
 
     {/* ================= TOP SECTION ================= */}
-    <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-4 items-center pt-8 md:pb-4 z-1">
+    <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-4 items-center pt-8 z-1">
 
       {data.imageFirst && (
         <motion.div
@@ -84,7 +84,7 @@ return (
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative w-[85%] mx-auto md:mx-1 md:w-[72%] h-[300px] md:h-[430px] md:left-[15%]"
+          className="relative w-[85%] mx-auto lg:mx-1 lg:w-[72%] h-[300px] md:h-[430px] lg:left-[15%]"
         >
           <Image
             src={data.imageFirst[0].src}
@@ -102,7 +102,7 @@ return (
           transition={{ duration: 0.8, delay: 0.3 }}
           style={{ originX: 0 }}
           viewport={{ once: true }}
-          className="md:border-t md:border-black w-[70%] md:my-14 text-center"
+          className="lg:border-t lg:border-black w-[70%] lg:my-14 text-center"
         />
 
         <motion.div
@@ -114,9 +114,9 @@ return (
           whileInView="visible"
           viewport={{ once: true }}
           transition={{ staggerChildren: 0.2, duration: 0.6 }}
-          className="block relative mx-auto w-[90%] md:mx-0 md:w-[90%] md:pl-0"
+          className="block relative mx-auto w-[90%] lg:mx-0 lg:w-[90%] lg:pl-0"
         >
-          <h1 className="text-3xl md:text-3xl font-light mb-8 text-left mt-6 md:mt-0">
+          <h1 className="text-2xl lg:text-3xl font-light mb-8 text-left mt-6 lg:mt-0">
             {data.title}
           </h1>
 
@@ -132,7 +132,7 @@ return (
     </div>
 
     {/* ================= UPPER MIDDLE SECTION ================= */}
-    <div className="md:mt-2 md:max-w-7xl mx-auto w-[81%] md:w-[90%]">
+    <div className="md:max-w-7xl mx-auto w-[81%] md:w-[90%]">
       <div className="leading-relaxed mb-4">
         {data.descriptionUpMid.split("split").map((line, i) => (
           <p key={i} className="mb-4 text-base">
@@ -143,8 +143,8 @@ return (
     </div>
 
     {/* ================= BOTTOM MIDDLE SECTION ================= */}
-    <div className="md:mt-2 md:max-w-7xl mx-auto w-[81%] md:w-[90%]">
-      <div className="leading-relaxed mb-4">
+    <div className="md:max-w-7xl mx-auto w-[81%] md:w-[90%]">
+      <div className="leading-relaxed">
         {data.descriptionBotMid.split("split").map((line, i) => (
           <p key={i} className="mb-4 text-base">
             {renderText(line)}
@@ -155,86 +155,83 @@ return (
 
 
     {/* ================= BOTTOM SECTION ================= */}
-    <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-4 items-center py-8 z-1 md:max-w-7xl md:mx-auto">
+    <div className="max-w-7xl mx-auto w-[81%] md:w-[90%]">
+      <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-4 items-center py-4 z-1">
 
-      {/* Left text only */}
-      <div className="relative h-full w-[85%] md:w-full justify-start order-2 md:order-1 md:mb-10 mx-auto">
-        <motion.div
-          variants={{
-            hidden: { opacity: 0, y: 30 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ staggerChildren: 0.2, duration: 0.6 }}
-          className="block relative h-full md:w-[90%] md:h-[400px] pl-0"
-        >
-          <div className="leading-relaxed mb-4 text-justify">
-            {data.descriptionBot.split("split").map((line, i) => (
-              <p key={i} className="mb-4 text-base">
-                {renderText(line)}
-              </p>
-            ))}
-          </div>
+        {/* Left text only */}
+        <div className="relative h-full order-2 md:order-1 md:mb-10">
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ staggerChildren: 0.2, duration: 0.6 }}
+            className="relative"
+          >
+            <div className="leading-relaxed mb-4">
+              {data.descriptionBot.split("split").map((line, i) => (
+                <p key={i} className="mb-4 text-base">
+                  {renderText(line)}
+                </p>
+              ))}
+            </div>
 
-          {/* Button */}
-          {data.callToAction?.text && data.callToAction?.href && (
-            <a
-              href={data.callToAction.href}
-              className="group inline-flex items-center justify-center self-center my-6 px-6 py-2.5 bg-theme7 text-white font-medium rounded-3xl duration-300 transition-transform hover:scale-105"
-            >
-              {/* Inner wrapper keeps alignment stable */}
-              <span className="relative flex items-center">
-                
-                {/* Text */}
-                <span className="transition-transform duration-500 ease-out group-hover:-translate-x-2">
-                  {data.callToAction.text}
+            {/* Button */}
+            {data.callToAction?.text && data.callToAction?.href && (
+              <a
+                href={data.callToAction.href}
+                className="group inline-flex items-center justify-center mt-6 px-6 py-2.5 bg-theme7 text-white font-medium rounded-3xl duration-300 transition-transform hover:scale-105"
+              >
+                <span className="relative flex items-center">
+                  <span className="transition-transform duration-500 ease-out group-hover:-translate-x-2">
+                    {data.callToAction.text}
+                  </span>
+
+                  <span className="absolute right-[-8px] opacity-0 translate-x-[-8px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-out">
+                    &gt;
+                  </span>
                 </span>
+              </a>
+            )}
+          </motion.div>
+        </div>
 
-                {/* Arrow (absolute so it doesn't affect centering) */}
-                <span className="absolute right-[-8px] opacity-0 translate-x-[-8px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-out">
-                  &gt;
-                </span>
-
-              </span>
-            </a>
-          )}
-        </motion.div>
+        {/* Right slideshow */}
+        {data.images && (
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="relative w-[90%] md:w-[80%] h-[300px] md:h-[430px] mx-auto overflow-hidden order-1 md:order-2 self-start pt-10"
+          >
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={slideIndex}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={data.images[slideIndex].src}
+                  alt={data.title}
+                  fill
+                  className="object-cover shadow-md rounded-3xl"
+                />
+              </motion.div>
+            </AnimatePresence>
+          </motion.div>
+        )}
       </div>
-
-      {/* Right slideshow */}
-      {data.images && (
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="relative w-[90%] md:w-[72%] h-[300px] md:h-[430px] mx-auto overflow-hidden order-1 md:order-2"
-        >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={slideIndex}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              className="absolute inset-0"
-            >
-              <Image
-                src={data.images[slideIndex].src}
-                alt={data.title}
-                fill
-                className="object-cover shadow-md rounded-3xl"
-              />
-            </motion.div>
-          </AnimatePresence>
-        </motion.div>
-      )}
     </div>
 
     {/* ================= QUOTE SECTION ================= */}
-    <div className="relative w-full bg-theme6 py-12 px-6 md:px-8 md:mt-20">
+    <div className="relative w-full bg-theme6 py-12 px-6 md:px-8">
 
       {/* TOP DIVIDER */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">

@@ -46,7 +46,7 @@ const ScrollToTopButton = () => {
           animate={{
             opacity: 1,
             y: 0,
-            scale: [1, 1.1, 1], // 👈 pulse
+            scale: [1, 1.1, 1],
           }}
           exit={{ opacity: 0, y: 40, scale: 0.9 }}
           whileHover={{ y: -8, scale: 1 }}

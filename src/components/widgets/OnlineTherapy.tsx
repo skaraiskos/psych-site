@@ -17,7 +17,7 @@ const data = {
 
 const OnlineTherapy = () => {
   return (
-      <section className="relative w-full bg-theme2 text-justify mb-10">
+      <section className="relative w-full bg-theme2 md:text-justify mb-10">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-4 items-start pt-8 z-1">
           {data.image && (
           <motion.div
@@ -25,7 +25,7 @@ const OnlineTherapy = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="relative w-full w-[85%] mx-auto md:mx-1 md:w-[72%] h-[300px] md:h-[430px] md:left-[15%]"
+              className="relative w-[85%] mx-auto md:mx-1 md:w-[72%] h-[300px] md:h-[430px] md:left-[15%]"
           >
             <Image
               src={data.image}

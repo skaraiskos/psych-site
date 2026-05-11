@@ -126,7 +126,7 @@ const Header = () => {
       }`}
       id="header"
     >
-      <div className="mx-auto w-full max-w-8xl md:flex md:justify-end md:py-4 md:pl-12">
+      <div className="mx-auto w-full max-w-8xl md:flex md:items-center md:justify-between md:py-3 md:pl-6 lg:pr-6">
         <div
           className={`flex justify-between py-3 px-3 md:py-0 md:px-0 ${
             isToggleMenuOpen
@@ -134,22 +134,25 @@ const Header = () => {
               : ''
           }`}
         >
+          {/*LOGO*/}
           <Link
-            className="flex items-center"
+            className="flex items-center shrink-0"
             href="/"
             onClick={() =>
               isToggleMenuOpen ? handleToggleMenuOnClick() : setIsDropdownOpen(updatedIsDropdownOpen as boolean[])
             }
           >
             {image && (
-              <Image
-              src={image.src}
-              alt={image.alt}
-              width={290}
-              height={90}
-              className="object-contain"
-              priority
-            />
+              <div className="w-[220px] md:w-[160px] lg:w-[290px]">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={290}
+                  height={90}
+                  className="object-contain"
+                  priority
+                />
+              </div>
             )}
           </Link>
           <div className="flex items-center md:hidden">
@@ -159,12 +162,12 @@ const Header = () => {
         <nav
           className={`${isToggleMenuOpen ? 'block px-3' : 'hidden'} text-text h-screen md:w-full ${
             position === 'right' ? 'justify-end' : position === 'left' ? 'justify-start' : 'justify-center'
-          } w-auto overflow-y-auto md:mx-5 md:flex md:h-auto md:items-center md:overflow-visible`}
+          } w-auto overflow-y-auto lg:ml-5 md:flex md:h-auto lg:items-center md:items-end md:overflow-visible`}
           aria-label="Main navigation"
         >
           <ul
             ref={ref}
-            className="flex w-full flex-col mt-2 mb-36 md:m-0 text-sm md:w-auto md:flex-row md:self-center md:pt-0 space-x-3 group"
+            className="flex w-full flex-col mt-2 mb-36 md:m-0 text-sm md:w-auto md:flex-row md:flex-nowrap md:self-center md:pt-0 lg:gap-x-2 group"
           >
             {links &&
               links.map(({ label, href, icon: Icon, links }, index) => (
@@ -187,7 +190,7 @@ const Header = () => {
                   {links && links.length ? (
                     <>
                       <Link
-                        className="flex items-center px-4 py-3 font-medium transition duration-150 ease-in-out hover:!text-theme5 md:group-hover:text-text/40"
+                        className="flex items-center md:px-1 lg:px-2 xl:px-4 py-3 text-sm transition duration-150 ease-in-out hover:!text-theme5 md:group-hover:text-text/40"
                         href={href as string}
                       >
                         <span className = "relative inline-block after:absolute after:-bottom-1 after:left-0 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
@@ -198,7 +201,7 @@ const Header = () => {
                           <Icon
                             className={`${
                               (isDropdownOpen[index] && window.innerWidth < 768) || isDropdownOpenDesktop[index] ? 'rotate-180' : ''
-                            } ml-0.5 rtl:ml-0 rtl:mr-0.5 h-3.5 w-3.5 inline`}
+                            } ml-0.5 rtl:ml-0 rtl:mr-0.5 h-5 w-5 inline`}
                             onClick={() => {
                               if (window.innerWidth < 768) {
                                 //mobile-only
@@ -231,7 +234,7 @@ const Header = () => {
                     </>
                   ) : (
                     <Link
-                      className="flex items-center px-4 py-3 font-medium transition duration-150 ease-in-out hover:!text-theme5 md:group-hover:text-text/40"
+                      className="flex items-center md:px-1 lg:px-2 xl:px-4 py-3 text-sm transition duration-150 ease-in-out hover:!text-theme5 md:group-hover:text-text/40"
                       href={href as string}
                       onClick={() => (isToggleMenuOpen ? handleToggleMenuOnClick() : handleDropdownOnClick(index))}
                     >
@@ -247,9 +250,9 @@ const Header = () => {
         <div
           className={`${
             isToggleMenuOpen ? 'block' : 'hidden'
-          } fixed bottom-0 left-0 w-full justify-end p-3 md:static md:mb-0 md:flex md:w-[20%] md:self-center md:p-0 md:bg-transparent md:border-none bg-white border-t border-gray-200`}
+          } fixed bottom-0 left-0 w-full justify-end p-3 md:static md:mb-0 md:flex md:w-[5%] lg:w-[10%] xl:w-[15%] md:self-center md:p-0 md:bg-transparent md:border-none bg-white border-t border-gray-200`}
         >
-          {<div className="flex w-full items-center justify-between md:w-[20%]">
+          {<div className="flex w-full items-center justify-between md:w-[5%] lg:w-[10%] xl:w-[15%]">
             
           </div>}
         </div>

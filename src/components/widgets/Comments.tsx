@@ -17,16 +17,13 @@ type VariantProps = {
 
 const commentsData = [
   {
-    text: "Αυτή είναι μια πολύ όμορφη εμπειρία που αξίζει να μοιραστεί κανείς. Με βοήθησε πραγματικά να δω τα πράγματα διαφορετικά. Εξαιρετική προσέγγιση και πολύ ανθρώπινη.",
-    author: "Μαρία Π."
-  },
-  {
-    text: "Με βοήθησε πραγματικά να δω τα πράγματα διαφορετικά.",
-    author: "Γιώργος Κ."
-  },
-  {
-    text: "Εξαιρετική προσέγγιση και πολύ ανθρώπινη.",
-    author: "Ελένη Σ."
+    text: "Η κόρη μου οταν ήταν να παει 1η δημοτικού  ειχε διάγνωση απο το κεδασυ να παει σε ειδικο σχολειο, πηρα την αποφαση να παει σε τυπικο κ σ αυτη την αποφαση ο θεος μας εστειλε τη Σταυρούλα....\
+            Ανέλαβε τη Λυδία μέχρι την Τετάρτη δημοτικού.\
+            Η Σταυρούλα  σηκωσε μεταφορικά αλλα και  κυριολεκτικα τη Λυδια στην πλατη της! Χαρη στη Σταυρούλα η κόρη μου εντάχθηκε σε ενα σχολείο 400 παιδιών κ την αγκάλιασαν όλοι οι μαθητές\
+            Σταυρούλα εισαι παράδειγμα για όλους τους συναδέλφους σου\
+            Εγω  απλά σε ευχαριστώ για το ήθος κ την αγαπη σου.\
+            Τα παιδιά μας τα βλέπεις στις ψυχές τους",
+    author: "Αναστασία Κ."
   }
 ];
 const formData = {
@@ -114,7 +111,7 @@ const Comments = () => {
           preserveAspectRatio="none"
         >
           <path
-            d="M0,0 C60,120 620,100 880,85 C1060,70 1280,20 1440,50"
+            d="M0,0 C60,120 420,80 780,35 C1060,0 1280,20 1440,50"
             fill="none"
             stroke="currentColor"
             strokeWidth="3"
@@ -122,7 +119,7 @@ const Comments = () => {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-12 items-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12 items-center">
 
         {/* LEFT — COMMENTS */}
         <div className="relative flex items-center md:mx-5 justify-center">
@@ -144,58 +141,53 @@ const Comments = () => {
           </button>
 
           {/* Comment Area */}
-          <div className="relative w-[90%] md:w-full max-w-3xl h-[260px] md:h-[280px] px-0 py-12 md:py-20">
+          <div className="relative w-[90%] md:w-full max-w-3xl h-[800px] md:h-[380px] flex items-center justify-center overflow-hidden">
 
-            {/* Top-left quote */}
-            <span className="absolute top-4 left-2 md:top-0 md:-left-4 text-[80px] md:text-[140px] leading-none text-gray-500 select-none pointer-events-none">
-              “
-            </span>
+            <AnimatePresence initial={false} custom={direction}>
+              <motion.div
+                key={index}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 260, damping: 28 },
+                  opacity: { duration: 0.2 }
+                }}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={1}
+                onDragEnd={(e, { offset }) => {
+                  if (offset.x < -80) paginate(1);
+                  else if (offset.x > 80) paginate(-1);
+                }}
+                className="absolute w-full flex justify-center px-6"
+              >
+                {/* CONTENT BLOCK */}
+                <div className="relative max-w-2xl text-center py-12">
 
-            {/* Bottom-right quote */}
-            <span className="absolute bottom-4 right-2 md:-bottom-6 md:-right-4 text-[80px] md:text-[140px] leading-none text-gray-500 select-none pointer-events-none">
-              ”
-            </span>
+                  {/* Top-left quote */}
+                  <span className="absolute top-0 -left-2 md:-left-6 text-[80px] md:text-[120px] leading-none text-gray-500 pointer-events-none">
+                    “
+                  </span>
 
-            {/* Animated Content */}
-            <div className="absolute inset-0 flex items-center justify-center">
-                
-                {/* Motion layer (ONLY this moves) */}
-              <div className="relative w-full max-w-2xl h-full overflow-hidden">
-                <AnimatePresence initial={false} custom={direction}>
-                  <motion.div
-                    key={index}
-                    custom={direction}
-                    variants={variants}
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                    transition={{
-                      x: { type: "spring", stiffness: 260, damping: 28 },
-                      opacity: { duration: 0.2 }
-                    }}
-                    drag="x"
-                    dragConstraints={{ left: 0, right: 0 }}
-                    dragElastic={1}
-                    onDragEnd={(e, { offset }) => {
-                      if (offset.x < -80) paginate(1);
-                      else if (offset.x > 80) paginate(-1);
-                    }}
-                    
-                    className="absolute inset-0 flex items-center justify-center text-center px-6"
-                  >
-                    <div className="max-w-2xl">
-                      <p className="text-base italic leading-relaxed text-text mb-6">
-                        {commentsData[index].text}
-                      </p>
+                  {/* Bottom-right quote */}
+                  <span className="absolute -bottom-8 -right-2 md:-right-6 text-[80px] md:text-[120px] leading-none text-gray-500 pointer-events-none">
+                    ”
+                  </span>
 
-                      <p className="text-sm text-gray-500">
-                        — {commentsData[index].author}
-                      </p>
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-            </div>
+                  <p className="text-base italic leading-relaxed text-text mb-6">
+                    {commentsData[index].text}
+                  </p>
+
+                  <p className="text-sm text-gray-500">
+                    — {commentsData[index].author}
+                  </p>
+
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
 

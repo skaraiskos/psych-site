@@ -6,7 +6,7 @@ export default function BlogLayout({ children }: { children: ReactNode }) {
     <>
       <HeaderInner page="blog" />
 
-      <section className="mx-auto max-w-7xl px-6 py-8 lg:py-4">
+      <section className="mx-auto max-w-7xl px-2 py-8 lg:py-4 overflow-x-hidden">
         {children}
       </section>
     </>

@@ -44,7 +44,7 @@ export const headerData: HeaderProps = {
       ],
     },
     {
-      label: 'Γνωσιακή Συμπεριφορική Ψυχοθεραπεία',
+      label: 'Η Προσέγγιση',
       href: '/practice',
     },
     {
