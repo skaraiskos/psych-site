@@ -83,13 +83,61 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: "/favicon.ico"
+    icon: "/favicon-v1.png",
+    shortcut: "/favicon-v1.png"
   },
 };
 
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
+};
+
+const psychologistSchema = {
+  "@context": "https://schema.org",
+  "@type": "Psychologist",
+  name: "Σταυρούλα Μαυρογόνατου",
+  url: "https://stavroulamavrogonatou.gr",
+  telephone: "+306951780181",
+  email: "mavrogonatoupsych@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Αγίου Ιωάννου 63",
+    addressLocality: "Αγία Παρασκευή",
+    addressCountry: "GR",
+  },
+  areaServed: [
+    "Αθήνα",
+    "Αττική",
+    "Ελλάδα"
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Psychotherapy Services",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Online Ψυχοθεραπεία",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Δια ζώσης Ψυχοθεραπεία",
+        },
+      },
+    ],
+  },
+  availableChannel: {
+    "@type": "ServiceChannel",
+    serviceLocation: {
+      "@type": "VirtualLocation",
+      url: "https://stavroulamavrogonatou.gr/online-therapy",
+    },
+  }
 };
 
 export default function RootLayout({ children }: LayoutProps) {
@@ -99,6 +147,12 @@ export default function RootLayout({ children }: LayoutProps) {
         <meta charSet="utf-8" />
       </head>
       <body className="motion-safe:scroll-smooth tracking-tight antialiased text-gray-900 theme-light">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(psychologistSchema),
+          }}
+        />
         <CookieConsentProvider>
           <Providers>
             <CookieConsentComponent />
