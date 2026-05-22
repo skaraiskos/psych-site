@@ -93,9 +93,10 @@ const Header = () => {
   return (
     <>
     <div className="w-full bg-theme6 text-theme4 text-sm">
-      <div className="max-w-8xl mx-auto flex justify-between items-center px-4 py-1">
+      {/*<div className="max-w-8xl mx-auto flex justify-between items-right px-4 py-1">*/}
+      <div className="max-w-8xl mx-auto flex justify-end px-4 py-1">
 
-        {/* LEFT — button */}
+        {/* RIGHT — button */}
         <a
           href="/contact"
           className="px-3 py-1 border border-white bg-theme4 rounded-md font-medium hover:bg-theme4/80 text-white transition"
@@ -104,17 +105,17 @@ const Header = () => {
         </a>
 
         {/* RIGHT — email + phone */}
-        <div className="flex items-center gap-4">
-          {/*<a href="mailto:mavrogonatoupsych@gmail.com" className="flex items-center gap-1 font-medium">
+        {/*<div className="flex items-center gap-4">
+          <a href="mailto:mavrogonatoupsych@gmail.com" className="flex items-center gap-1 font-medium">
             <IconMail className="w-4 h-4" />
             <span className="hidden sm:inline">mavrogonatoupsych@gmail.com</span>
-          </a>*/}
+          </a>
 
           <a className="flex items-center gap-1 font-medium">
             <IconPhoneCall className="w-4 h-4" />
             6951780181
           </a>
-        </div>
+        </div>*/}
 
       </div>
     </div>
@@ -143,7 +144,7 @@ const Header = () => {
             }
           >
             {image && (
-              <div className="w-[220px] md:w-[160px] lg:w-[290px]">
+              <div className="w-[220px] md:w-[160px] lg:w-[230px]">
                 <Image
                   src={image.src}
                   alt={image.alt}

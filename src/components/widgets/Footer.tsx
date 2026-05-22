@@ -38,9 +38,9 @@ const content = {
     ],
     links1Title: 'Στοιχεία Επικοινωνίας',
     links1:[
-      { label: 'Διεύθυνση', icon: IconMapPinFilled, text: 'Αγίου Ιωάννου 63, Αγία Παρασκευή' },
-      { label: 'Email', icon: IconMailFilled, text: 'mavrogonatoupsych@gmail.com' },
-      { label: 'Τηλέφωνο', icon: IconPhoneFilled, text: '6951780181' },
+      { label: 'Διεύθυνση', type: "address", icon: IconMapPinFilled, text: 'Αγίου Ιωάννου 63, Αγία Παρασκευή' },
+      { label: 'Email', type: "email", icon: IconMailFilled, text: 'mavrogonatoupsych@gmail.com' },
+      { label: 'Τηλέφωνο', type: "phone", icon: IconPhoneFilled, text: '6951780181' },
     ],
     links2Title: 'Σύνδεσμοι',
     links2:[
@@ -140,13 +140,36 @@ const Footer = () => {
                 <h3 className="text-lg font-semibold pointer-events-none">
                   {content.links1Title}
                 </h3>
+                {content.links1.map((s, i) => {
+                  let href: string | null = null;
 
-                {content.links1.map((s, i) => (
-                  <div key={i} className="flex items-center space-x-2 mt-4">
-                    {s.icon && <s.icon className="h-5 w-5 text-gray-500" />}
-                    <span className="text-gray-700">{s.text}</span>
-                  </div>
-                ))}
+                  if (s.type === "phone") {
+                    href = `tel:+30${s.text}`;
+                  }
+
+                  if (s.type === "email") {
+                    href = `mailto:${s.text}`;
+                  }
+
+                  const Row = (
+                    <div className="flex items-center space-x-2 mt-4">
+                      {s.icon && <s.icon className="h-5 w-5 text-gray-500" />}
+                      <span className="text-gray-700">{s.text}</span>
+                    </div>
+                  );
+
+                  return href ? (
+                    <a
+                      key={i}
+                      href={href}
+                      className="hover:opacity-80 transition"
+                    >
+                      {Row}
+                    </a>
+                  ) : (
+                    <div key={i}>{Row}</div>
+                  );
+                })}
               </div>
 
               {/* Column 2 */}

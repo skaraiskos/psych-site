@@ -55,7 +55,7 @@ const contactData = {
   },
 };
 
-const Contact = () => (
+const ContactPage = () => (
   <section
     className="relative not-prose scroll-mt-[72px] mx-auto max-w-7xl px-6 py-12"
     id=""
@@ -126,4 +126,4 @@ const Contact = () => (
 
 );
 
-export default Contact;
+export default ContactPage;

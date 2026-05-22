@@ -27,6 +27,7 @@ type SocialItem = {
 
 type LinkItem = {
   label: string;
+  type: string;
   icon: IconType;
   text: string;
 };
@@ -53,9 +54,9 @@ const content = {
     /*{ label: "Facebook", icon: IconBrandFacebook, href: "#" },*/
   ] as SocialItem[],
   links1: [
-    { label: "Διεύθυνση", icon: IconMapPinFilled, text: "Αγίου Ιωάννου 63, Αγία Παρασκευή" },
-    { label: "Email", icon: IconMailFilled, text: "mavrogonatoupsych@gmail.com" },
-    { label: "Τηλέφωνο", icon: IconPhoneFilled, text: "6951780181" },
+    { label: 'Διεύθυνση', type: "address", icon: IconMapPinFilled, text: 'Αγίου Ιωάννου 63, Αγία Παρασκευή' },
+    { label: 'Email', type: "email", icon: IconMailFilled, text: 'mavrogonatoupsych@gmail.com' },
+    { label: 'Τηλέφωνο', type: "phone", icon: IconPhoneFilled, text: '6951780181' },
   ] as LinkItem[],
 };
 
@@ -264,12 +265,36 @@ export default function BlogMobile({ posts, currentPage, totalPages }: Props) {
               <span className="block w-12 h-[2px] bg-gray-400 mt-1"></span>
             </h3>
             <div className="flex flex-col justify-start">
-              {content.links1.map((s, i) => (
-                <div key={i} className="flex items-center space-x-2 mt-1">
-                  {s.icon && <s.icon className="h-3 w-3" />}
-                  <span className="text-gray-700 text-sm">{s.text}</span>
-                </div>
-              ))}
+              {content.links1.map((s, i) => {
+                let href: string | null = null;
+
+                if (s.type === "phone") {
+                  href = `tel:+30${s.text}`;
+                }
+
+                if (s.type === "email") {
+                  href = `mailto:${s.text}`;
+                }
+
+                const Row = (
+                  <div className="flex items-center space-x-2 mt-1">
+                    {s.icon && <s.icon className="h-3 w-3" />}
+                    <span className="text-gray-700 text-sm">{s.text}</span>
+                  </div>
+                );
+
+                return href ? (
+                  <a
+                    key={i}
+                    href={href}
+                    className="hover:opacity-80 transition"
+                  >
+                    {Row}
+                  </a>
+                ) : (
+                  <div key={i}>{Row}</div>
+                );
+              })}
             </div>
           </div>
         </motion.aside>

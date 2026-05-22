@@ -43,7 +43,6 @@ const mobilePositions = [
 
 // desktop offsets (1 & 3 down, 2 & 4 up)
 const desktopOffsets = [20, -20, 20, -20];
-const mobileRotations = [8, 4, 10, 14];
 
 const Purpose = ({ id, header }: PurposeProps) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -82,7 +81,7 @@ const Purpose = ({ id, header }: PurposeProps) => {
   return (
     <section
       id={id}
-      className="relative w-full bg-theme4 pt-20 pb-24"
+      className="relative w-full bg-theme4 pt-20 pb-16 md:pb-24"
     >
       {/* TOP DIVIDER */}
       <div className="absolute top-[-1px] left-0 w-full overflow-hidden leading-none">
@@ -123,58 +122,12 @@ const Purpose = ({ id, header }: PurposeProps) => {
 
       {/* ================= CIRCLES Component================= */}
       <div className="mt-10 relative">
-
-        {/* MOBILE (radial) */}
-        {/*<motion.div
-          className="relative md:hidden h-[350px] w-full max-w-sm mx-auto"
-          initial={{ rotate: -8, opacity: 0 }}
-          whileInView={{ rotate: -8, opacity: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{
-            type: "spring",
-            stiffness: 140,
-            damping: 12,
-          }}
-        >
-          {pillars.map(({ title, icon: Icon }, i) => {
-            const pos = getPolarPosition(i, pillars.length, 40); // 40% radius
-
-            return (
-              <div
-                key={i}
-                className={twMerge(
-                  "absolute flex items-center justify-center",
-                  mobilePositions[i]
-                )}
-              >
-                <motion.div
-                  initial={{ y: -80, opacity: 0, rotate: 0 }}
-                  whileInView={{ y: 0, opacity: 1, rotate: mobileRotations[i] }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 260,
-                    damping: 18,
-                    delay: i * 0.12,
-                  }}
-                  className="w-28 h-28 rounded-full bg-theme6 flex flex-col items-center justify-center text-center shadow-lg shadow-[0_10px_30px_rgba(255,223,0,0.25)]"
-                >
-                  {Icon && (
-                    <Icon className="w-6 h-6 mb-1 text-theme4" />
-                  )}
-                  <p className="text-xs font-medium text-theme4 px-2">
-                    {title}
-                  </p>
-                </motion.div>
-              </div>
-              );
-          })}
-        </motion.div>*/}
+        {/* MOBILE */}
         <motion.div
           ref={sectionRef}
-          className="relative md:hidden h-[350px] w-full max-w-sm mx-auto"
-          initial={{ rotate: -8, opacity: 0 }}
-          whileInView={{ rotate: -8, opacity: 1 }}
+          className="md:hidden w-full max-w-sm mx-auto flex flex-col items-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{
             type: "spring",
@@ -184,57 +137,13 @@ const Purpose = ({ id, header }: PurposeProps) => {
           onClick={() => setActiveIndex(null)}
         >
 
-          {/* CENTER POPUP COMPONENT */}
-          <AnimatePresence>
-            {activeIndex !== null && (
-              <motion.div
-                key="center"
-                className="absolute top-[28%] left-[22%] -translate-x-1/2 -translate-y-1/2 z-20"
-                initial={{ scale: 0, opacity: 0, rotate: 8 }}
-                animate={{
-                  scale: isLeaving ? 0 : 1,
-                  opacity: isLeaving ? 0 : 1,
-                }}
-                exit={{ scale: 0, opacity: 0 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 160,
-                  damping: 18,
-                }}
-              >
-                <div className="
-                  w-52 h-40 rounded-3xl shadow-xl justify-center text-center p-1
-                  relative
-                  bg-theme6
-                  flex flex-col justify-center items-center
-                  overflow-hidden
-                  shadow-lg shadow-[0_0_20px_rgba(255,223,0,0.6)]
-                  ">
-                  {ActiveIcon && (
-                    <ActiveIcon className="w-10 h-10 text-theme4 mb-2" />
-                  )}
-                  <p className="text-xs text-theme4
-                      px-1 text-center overflow-hidden mt-1 pointer-events-none">
-                    {ActiveText}
-                  </p>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
           {/* CIRCLES */}
-          {pillars.map(({ title, icon: Icon }, i) => {
-            const isActive = activeIndex === i;
-            const isDimmed = activeIndex !== null && activeIndex !== i;
+          <div className="flex justify-between items-start w-full px-2">
+            {pillars.map(({ title, icon: Icon }, i) => {
+              const isActive = activeIndex === i;
+              const isDimmed = activeIndex !== null && activeIndex !== i;
 
-            return (
-              <div
-                key={i}
-                className={twMerge(
-                  "absolute flex items-center justify-center",
-                  mobilePositions[i]
-                )}
-              >
+              return (
                 <motion.div
                   onClick={(e) => {
                     e.stopPropagation();
@@ -253,8 +162,8 @@ const Purpose = ({ id, header }: PurposeProps) => {
                       setIsSwitching(false);
                     }, 200);
                   }}
-                  initial={{ y: -80, opacity: 0, rotate: 0, transition: { delay: i * 0.12 }}}
-                  whileInView={{ y: 0, opacity: 1, rotate: mobileRotations[i] }}
+                  initial={{ y: -80, opacity: 0, transition: { delay: i * 0.12 }}}
+                  whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{
                     type: "spring",
@@ -262,10 +171,16 @@ const Purpose = ({ id, header }: PurposeProps) => {
                     damping: 18
                   }}
                   animate={{
-                    scale: isActive ? 0.25 : 1,
+                    scale: isActive ? 0.45 : 1,
                     opacity: isDimmed ? 0.3 : 1,
                   }}
-                  className="w-28 h-28 rounded-full bg-theme6 flex flex-col items-center justify-center text-center shadow-lg shadow-[0_10px_30px_rgba(255,223,0,0.25)] cursor-pointer"
+                  className="
+                    w-20 h-20
+                    rounded-full
+                    bg-theme6
+                    flex flex-col items-center justify-center
+                    shadow-lg shadow-[0_10px_30px_rgba(255,223,0,0.25)]
+                  "
                 >
                   <AnimatePresence mode="wait">
                     {!isActive && (
@@ -275,17 +190,56 @@ const Purpose = ({ id, header }: PurposeProps) => {
                         exit={{ opacity: 0 }}
                         className="flex flex-col items-center"
                       >
-                        {Icon && <Icon className="w-6 h-6 mb-1 text-theme4" />}
-                        <p className="text-xs font-medium text-theme4 px-2">
+                        {Icon && <Icon className="w-4 h-4 mb-1 text-theme4" />}
+                        <p className="text-[10px] leading-tight font-medium text-gray-500 px-1">
                           {title}
                         </p>
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </motion.div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+
+          {/* CENTER POPUP COMPONENT */}
+          <div className="h-48 mt-6 flex items-center justify-center w-full">
+            <AnimatePresence mode="wait">
+              {activeIndex !== null && (
+                <motion.div
+                  key='center'
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{
+                    scale: isLeaving ? 0 : 1,
+                    opacity: isLeaving ? 0 : 1,
+                  }}
+                  exit={{ scale: 0, opacity: 0 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 160,
+                    damping: 18,
+                  }}
+                >
+                  <div className="
+                    w-56 h-44 rounded-3xl shadow-xl justify-center text-center p-1
+                    relative
+                    bg-theme6
+                    flex flex-col justify-center items-center
+                    overflow-hidden
+                    shadow-lg shadow-[0_0_20px_rgba(255,223,0,0.6)]
+                    ">
+                    {ActiveIcon && (
+                      <ActiveIcon className="w-10 h-10 text-theme4 mb-2" />
+                    )}
+                    <p className="text-xs text-gray-500
+                        px-1 text-center overflow-hidden mt-1 pointer-events-none">
+                      {ActiveText}
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </motion.div>
 
         {/* DESKTOP (row + offsets) */}
@@ -330,12 +284,12 @@ const Purpose = ({ id, header }: PurposeProps) => {
                     <Icon className="w-7 h-7 text-theme4 mb-2" />
                   )}
 
-                  <p className="text-sm font-medium text-theme4 px-2 pointer-events-none">
+                  <p className="text-sm font-medium text-gray-500 px-2 pointer-events-none">
                     {title}
                   </p>
                 </div>
 
-                <p className="text-xs text-theme4 opacity-0 max-h-0 
+                <p className="text-xs text-gray-500 opacity-0 max-h-0 
                     group-hover:opacity-100 group-hover:max-h-20 group-hover:delay-75
                     transition-[opacity,max-height,margin] duration-500 ease-out 
                     px-3 text-center overflow-hidden group-hover:mt-2 pointer-events-none">

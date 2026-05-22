@@ -44,6 +44,37 @@ const Articles = ({ posts = [] }) => {
           />
         </svg>
       </div>
+
+      {/*bottom divider*/}
+      <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none">
+        <svg
+          className="block w-full h-[90px] text-theme6 rotate-180"
+          style={{ overflow: "hidden" }}
+          viewBox="0 30 1440 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="currentColor"
+            d="M0,64 C240,120 980,0 1440,64 L1440,0 L0,0 Z"
+          />
+        </svg>
+      </div>
+
+      {/*overlay wave*/}
+      <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none">
+        <svg 
+          viewBox="0 30 1440 120"
+          className="w-full h-[30px] text-theme4"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,80 C260,-40 720,120 980,85 C1160,70 1380,40 1440,40"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="3"
+          />
+        </svg>
+      </div>
       
       {/* Wrapper (centered + max width) */}
       <div className="relative max-w-7xl mx-auto px-10 md:px-6">

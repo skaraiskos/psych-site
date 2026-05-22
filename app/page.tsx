@@ -34,7 +34,6 @@ export default async function Page() {
       <Purpose {...purposeHome} />
       <Features />
       <Articles posts={posts} />
-      <InstagramSection />
       <Comments />
       <Contact/>
     </>

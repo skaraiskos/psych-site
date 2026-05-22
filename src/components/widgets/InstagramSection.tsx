@@ -42,9 +42,9 @@ const InstagramSection = () => {
       </div>
 
       {/*bottom divider*/}
-      <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none">
+      {/*<div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none">
         <svg
-          className="block w-full h-[90px] text-theme6 rotate-180"
+          className="block w-full h-[90px] text-theme2 rotate-180"
           style={{ overflow: "hidden" }}
           viewBox="0 30 1440 120"
           preserveAspectRatio="none"
@@ -54,10 +54,10 @@ const InstagramSection = () => {
             d="M0,64 C240,120 980,0 1440,64 L1440,0 L0,0 Z"
           />
         </svg>
-      </div>
+      </div>*/}
 
       {/*overlay wave*/}
-      <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none">
+      {/*<div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none">
         <svg 
           viewBox="0 30 1440 120"
           className="block w-full h-[90px] text-white rotate-180"
@@ -70,7 +70,7 @@ const InstagramSection = () => {
             strokeWidth="20"
           />
         </svg>
-      </div>
+      </div>*/}
 
       {/* Background image */}
       <Image

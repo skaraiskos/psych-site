@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
-import Contact from '~/components/widgets/Contact';
+import ContactPage from '~/components/widgets/ContactPage';
+import InstagramSection from '~/components/widgets/InstagramSection';
 import HeaderInner from '~/components/widgets/HeaderInner';
 
 export const metadata: Metadata = {
@@ -12,7 +13,8 @@ const Page = () => {
   return (
     <>
       <HeaderInner page="contact" />
-      <Contact />
+      <ContactPage />
+      <InstagramSection />
     </>
   );
 };
