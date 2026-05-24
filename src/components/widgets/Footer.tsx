@@ -40,7 +40,7 @@ const content = {
     links1:[
       { label: 'Διεύθυνση', type: "address", icon: IconMapPinFilled, text: 'Αγίου Ιωάννου 63, Αγία Παρασκευή' },
       { label: 'Email', type: "email", icon: IconMailFilled, text: 'mavrogonatoupsych@gmail.com' },
-      { label: 'Τηλέφωνο', type: "phone", icon: IconPhoneFilled, text: '6951780181' },
+      { label: 'Τηλέφωνο', type: "phone", icon: IconPhoneFilled, text: '+30 6951780181' },
     ],
     links2Title: 'Σύνδεσμοι',
     links2:[
@@ -133,7 +133,7 @@ const Footer = () => {
             </div>
 
             {/* Columns */}
-            <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-12 md:h-[180px] text-sm">
+            <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-12 md:h-[180px] text-sm">
 
               {/* Column 1 */}
               <div className="flex flex-col justify-start">

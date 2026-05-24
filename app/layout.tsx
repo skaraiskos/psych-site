@@ -83,8 +83,8 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: "/favicon-v1.png",
-    shortcut: "/favicon-v1.png"
+    icon: "/favicon-v2.png",
+    shortcut: "/favicon-v2.png"
   },
 };
 

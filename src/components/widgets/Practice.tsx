@@ -1,12 +1,13 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 import Image from 'next/image';
 
-import therapyImg from '~/assets/images/therapyOnline.jpg';
+import practiceImg1 from '~/assets/images/practice1.jpg';
 
 const data = {
     title: 'Γνωσιακή Συμπεριφορική Ψυχοθεραπεία',
-    image: therapyImg,
+    image: practiceImg1,
     description1: 'Η Γνωσιακή Συμπεριφορική Ψυχοθεραπεία (Cognitive Behavioral Therapy – CBT) αποτελεί μια επιστημονικά τεκμηριωμένη προσέγγιση, που εστιάζει στη δυναμική σχέση ανάμεσα στις σκέψεις, τα συναισθήματα και τις συμπεριφορές. Κεντρικός της άξονας είναι η κατανόηση και η σταδιακή τροποποίηση μοτίβων που δυσκολεύουν την καθημερινή λειτουργικότητα και την ψυχική ισορροπία.split\
                     Η βασική αρχή της CBT είναι ότι δεν είναι τα ίδια τα γεγονότα που καθορίζουν το πώς νιώθουμε, αλλά ο τρόπος που τα αντιλαμβανόμαστε και τα ερμηνεύουμε. Μέσα από μια δομημένη συνεργατική θεραπευτική διαδικασία, η οποία αρχικά δίνει έμφαση στο παρόν, το άτομο ενισχύεται ώστε να:split\
                     · Αναγνωρίζει, αξιολογεί και να απαντά στις δυσλειτουργικές και πεποιθήσεις τουsplit\
@@ -42,6 +43,7 @@ const renderText = (text: string) => {
 };
 
 const Practice = () => {
+
   return (
       <section className="relative w-full min-h-screen bg-theme2 md:text-justify">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-4 items-center py-8 z-1 pointer-events-none">
@@ -62,6 +64,33 @@ const Practice = () => {
             />
           </motion.div>
           )}
+          {/*{data.images && (
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="relative w-[85%] mx-auto md:mx-1 md:w-[72%] h-[300px] md:h-[430px] md:left-[15%]"
+            >
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={slideIndex}
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 50 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={data.images[slideIndex].src}
+                    alt={data.title}
+                    fill
+                    className="object-cover shadow-md filter rounded-3xl opacity-90"
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </motion.div>
+          )}*/}
           <div className="relative h-full w-[90%] md:w-[95%] md:justify-start mx-auto md:mx-0">
             <motion.div
               initial={{ scaleX: 0 }}

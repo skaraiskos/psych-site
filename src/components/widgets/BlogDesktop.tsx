@@ -53,7 +53,7 @@ const content = {
   links1: [
     { label: 'Διεύθυνση', type: "address", icon: IconMapPinFilled, text: 'Αγίου Ιωάννου 63, Αγία Παρασκευή' },
     { label: 'Email', type: "email", icon: IconMailFilled, text: 'mavrogonatoupsych@gmail.com' },
-    { label: 'Τηλέφωνο', type: "phone", icon: IconPhoneFilled, text: '6951780181' },
+    { label: 'Τηλέφωνο', type: "phone", icon: IconPhoneFilled, text: '+30 6951780181' },
   ] as LinkItem[],
 };
 

@@ -4,6 +4,7 @@ import {
   IconMapPin,
   IconPhoneCall,
   IconMail,
+  IconDeviceLaptop
 } from '@tabler/icons-react';
 
 const contactData = {
@@ -12,18 +13,27 @@ const contactData = {
   items: [
     {
       type: "address",
-      values: ['Δια Ζώσης: Αγίου Ιωάννου 63, Αγία Παρασκευή', 'Διαδικτυακά'],
+      values: ['Αγίου Ιωάννου 63, Αγία Παρασκευή'],
       icon: IconMapPin,
     },
     {
+      type: "address",
+      values: ['Διαδικτυακά'],
+      icon: IconDeviceLaptop,
+    },
+    {
       type: "phone",
-      values: ['6951780181'],
+      values: ['+30 6951780181'],
       icon: IconPhoneCall,
     },
     {
       type: "email",
       values: ['mavrogonatoupsych@gmail.com'],
       icon: IconMail,
+    },
+    {
+      type: "description",
+      values: ['Παρέχεται η δυνατότητα διεξαγωγής συνεδριών και σε συνεργαζόμενο Κέντρο Ψυχοθεραπείας στα Γλυκά Νερά']
     },
   ],
   form: {
@@ -90,10 +100,11 @@ const ContactPage = () => (
 
                   <Wrapper>
                     {/* ICON ONLY ONCE */}
-                    <div className="flex h-10 w-10 items-center justify-center rounded bg-theme4 text-gray-50">
-                      {Icon && <Icon className="h-6 w-6" />
-                      }
-                    </div>
+                    {Icon && (
+                      <div className="flex h-10 w-10 items-center justify-center rounded bg-theme4 text-gray-50">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                    )}
 
                     {/* TEXT BLOCK */}
                     <div className="flex flex-col text-gray-600 leading-tight">

@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Image from 'next/image';
 
-import therapyImg from '~/assets/images/therapyOnline.jpg';
+import therapyImg from '~/assets/images/therapyOnline1.webp';
 
 const data = {
     title: 'Online Θεραπείες',
