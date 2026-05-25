@@ -51,7 +51,7 @@ type Props = {
 const content = {
   socials: [
     { label: "Instagram", icon: IconBrandInstagram, href: "https://instagram.com/psych.agogoume" },
-    /*{ label: "Facebook", icon: IconBrandFacebook, href: "#" },*/
+    { label: 'Facebook', icon: IconBrandFacebook, href: 'https://www.facebook.com/profile.php?id=61590202509735' },
   ] as SocialItem[],
   links1: [
     { label: 'Διεύθυνση', type: "address", icon: IconMapPinFilled, text: 'Αγίου Ιωάννου 63, Αγία Παρασκευή' },
@@ -208,6 +208,8 @@ export default function BlogMobile({ posts, currentPage, totalPages }: Props) {
                       className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm"
                       aria-label={label}
                       href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       {Icon && <Icon className="h-7 w-7 text-gray-400 hover:text-theme4 transition transform duration-200 hover:scale-110"/>}
                     </a>

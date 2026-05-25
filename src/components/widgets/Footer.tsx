@@ -34,7 +34,7 @@ const content = {
     ],
     socials: [
       { label: 'Instagram', icon: IconBrandInstagram, href: 'https://instagram.com/psych.agogoume' },
-      /*{ label: 'Facebook', icon: IconBrandFacebook, href: '#' },*/
+      { label: 'Facebook', icon: IconBrandFacebook, href: 'https://www.facebook.com/profile.php?id=61590202509735' },
     ],
     links1Title: 'Στοιχεία Επικοινωνίας',
     links1:[
