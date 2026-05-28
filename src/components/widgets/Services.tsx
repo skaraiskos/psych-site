@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from 'next/image';
 
 import therapyImg from '~/assets/images/therapy.webp';
-import onlineImg from '~/assets/images/therapyOnline.jpg';
+import onlineImg from '~/assets/images/therapyOnline1.webp';
 import gordons from '~/assets/images/effectiveParenting0.webp';
 import parenting from '~/assets/images/parenting.webp';
 
