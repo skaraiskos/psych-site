@@ -97,7 +97,7 @@ export default async function Page({ params }) {
           )}
         </header>
         <div
-          className="prose-md prose-headings:font-heading prose-headings:leading-tighter container prose prose-lg mx-auto mt-8 md:max-w-5xl lg:max-w-6xl px-6 prose-headings:font-bold prose-headings:tracking-tighter prose-a:text-primary-600 prose-img:rounded-md prose-img:shadow-lg sm:px-6 lg:prose-base"
+          className="prose-headings:font-heading prose-headings:leading-tighter container prose prose-sm mx-auto mt-8 md:max-w-5xl lg:max-w-6xl px-6 prose-headings:font-bold prose-headings:tracking-tighter prose-a:text-primary-600 prose-img:rounded-md prose-img:shadow-lg sm:px-6 lg:prose-base"
           dangerouslySetInnerHTML={{
             __html: md({
               html: true,
