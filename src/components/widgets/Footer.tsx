@@ -39,6 +39,7 @@ const content = {
     links1Title: 'Στοιχεία Επικοινωνίας',
     links1:[
       { label: 'Διεύθυνση', type: "address", icon: IconMapPinFilled, text: 'Αγίου Ιωάννου 63, Αγία Παρασκευή' },
+      { label: 'Διεύθυνση', type: "address", icon: IconMapPinFilled, text: 'Γλυκά Νερά' },
       { label: 'Email', type: "email", icon: IconMailFilled, text: 'mavrogonatoupsych@gmail.com' },
       { label: 'Τηλέφωνο', type: "phone", icon: IconPhoneFilled, text: '+30 6951780181' },
     ],
