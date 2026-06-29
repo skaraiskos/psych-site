@@ -28,7 +28,7 @@ const content = {
         href: '/gordons',
       },
       {
-        text: 'Online Θεραπείες',
+        text: 'Online Συνεδρίες',
         href: '/online-therapy',
       },
     ],

@@ -44,7 +44,7 @@ const featuresHome={
       },
     },
     {
-      title: 'Online Θεραπείες',
+      title: 'Online Συνεδρίες',
       description:
         'Προσφέρει μεγαλύτερη ευελιξία και διευκολύνει την πρόσβαση στη θεραπευτική διαδικασία.',
       icon: IconScreenShare,

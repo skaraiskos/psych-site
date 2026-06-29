@@ -38,7 +38,7 @@ export const headerData: HeaderProps = {
           href: '/gordons',
         },
         {
-          label: 'Online Θεραπείες',
+          label: 'Online Συνεδρίες',
           href: '/online-therapy',
         }
       ],

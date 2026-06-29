@@ -5,7 +5,7 @@ export const PAGE_TITLES = {
   contact: "Επικοινωνία",
   home: "Αρχική",
   personal_therapy: "Ατομική Ψυχοθεραπεία",
-  online_therapy: "Online Θεραπείες",
+  online_therapy: "Online Συνεδρίες",
   gordons: "Εργαστήριο Αποτελεσματικού Γονέα",
   parenting: "Συμβουλευτική Γονέων",
   practice:"Γνωσιακή Συμπεριφορική Ψυχοθεραπεία",
